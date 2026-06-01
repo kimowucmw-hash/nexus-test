@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+  <!-- ===== PWA / Home Screen ===== -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NEXUS">
+  <meta name="application-name" content="NEXUS">
+  <meta name="theme-color" content="#22d3ee">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8IS0tIEJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwNTA3MGYiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTAiIGZpbGw9IiMwYTBmMWYiLz4KCiAgPCEtLSBPdXRlciBoZXggcmluZyAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1Niw3MiAzNjgsMTM0IDM2OCwyNTggMjU2LDMyMCAxNDQsMjU4IDE0NCwxMzQiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IiMyMmQzZWUiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC4zIi8+CgogIDwhLS0gQ2lyY3VpdCBsaW5lcyByYWRpYXRpbmcgb3V0d2FyZCAtLT4KICA8IS0tIFRvcCAtLT4KICA8bGluZSB4MT0iMjU2IiB5MT0iNzIiIHgyPSIyNTYiIHkyPSIzOCIgc3Ryb2tlPSIjMjJkM2VlIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMzIiIHI9IjUiIGZpbGw9IiMyMmQzZWUiIG9wYWNpdHk9IjAuNyIvPgogIDwhLS0gVG9wLXJpZ2h0IC0tPgogIDxsaW5lIHgxPSIzNjgiIHkxPSIxMzQiIHgyPSI0MDIiIHkyPSIxMTQiIHN0cm9rZT0iIzIyZDNlZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjQwOCIgY3k9IjExMCIgcj0iNSIgZmlsbD0iIzIyZDNlZSIgb3BhY2l0eT0iMC43Ii8+CiAgPCEtLSBCb3R0b20tcmlnaHQgLS0+CiAgPGxpbmUgeDE9IjM2OCIgeTE9IjI1OCIgeDI9IjQwMiIgeTI9IjI3OCIgc3Ryb2tlPSIjYTg1NWY3IiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iNDA4IiBjeT0iMjg0IiByPSI1IiBmaWxsPSIjYTg1NWY3IiBvcGFjaXR5PSIwLjciLz4KICA8IS0tIEJvdHRvbSAtLT4KICA8bGluZSB4MT0iMjU2IiB5MT0iMzIwIiB4Mj0iMjU2IiB5Mj0iMzU0IiBzdHJva2U9IiNhODU1ZjciIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjUiLz4KICA8Y2lyY2xlIGN4PSIyNTYiIGN5PSIzNjAiIHI9IjUiIGZpbGw9IiNhODU1ZjciIG9wYWNpdHk9IjAuNyIvPgogIDwhLS0gQm90dG9tLWxlZnQgLS0+CiAgPGxpbmUgeDE9IjE0NCIgeTE9IjI1OCIgeDI9IjExMCIgeTI9IjI3OCIgc3Ryb2tlPSIjMjJkM2VlIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgPGNpcmNsZSBjeD0iMTA0IiBjeT0iMjg0IiByPSI1IiBmaWxsPSIjMjJkM2VlIiBvcGFjaXR5PSIwLjciLz4KICA8IS0tIFRvcC1sZWZ0IC0tPgogIDxsaW5lIHgxPSIxNDQiIHkxPSIxMzQiIHgyPSIxMTAiIHkyPSIxMTQiIHN0cm9rZT0iIzIyZDNlZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPgogIDxjaXJjbGUgY3g9IjEwNCIgY3k9IjExMCIgcj0iNSIgZmlsbD0iIzIyZDNlZSIgb3BhY2l0eT0iMC43Ii8+CgogIDwhLS0gSW5uZXIgaGV4IChmaWxsZWQpIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjU2LDExOCAzMTYsMTUxIDMxNiwyMTcgMjU2LDI1MCAxOTYsMjE3IDE5NiwxNTEiCiAgICBmaWxsPSJyZ2JhKDM0LDIxMSwyMzgsMC4wNykiIHN0cm9rZT0iIzIyZDNlZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CgogIDwhLS0gU3Bva2VzIGZyb20gaW5uZXIgdG8gb3V0ZXIgaGV4IC0tPgogIDxsaW5lIHgxPSIyNTYiIHkxPSIxMTgiIHgyPSIyNTYiIHkyPSI3MiIgc3Ryb2tlPSIjMjJkM2VlIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDxsaW5lIHgxPSIzMTYiIHkxPSIxNTEiIHgyPSIzNjgiIHkyPSIxMzQiIHN0cm9rZT0iIzIyZDNlZSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iMzE2IiB5MT0iMjE3IiB4Mj0iMzY4IiB5Mj0iMjU4IiBzdHJva2U9IiNhODU1ZjciIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC40Ii8+CiAgPGxpbmUgeDE9IjI1NiIgeTE9IjI1MCIgeDI9IjI1NiIgeTI9IjMyMCIgc3Ryb2tlPSIjYTg1NWY3IiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPgogIDxsaW5lIHgxPSIxOTYiIHkxPSIyMTciIHgyPSIxNDQiIHkyPSIyNTgiIHN0cm9rZT0iIzIyZDNlZSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjQiLz4KICA8bGluZSB4MT0iMTk2IiB5MT0iMTUxIiB4Mj0iMTQ0IiB5Mj0iMTM0IiBzdHJva2U9IiMyMmQzZWUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC40Ii8+CgogIDwhLS0gQ2VudHJlIGRpYW1vbmQgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIyNTYsMTUyIDI4MiwxODQgMjU2LDIxNiAyMzAsMTg0IgogICAgZmlsbD0iIzIyZDNlZSIgb3BhY2l0eT0iMC45MiIvPgogIDwhLS0gQ2VudHJlIGRpYW1vbmQgaW5uZXIgZ2xvdyAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNjIgMjc0LDE4NCAyNTYsMjA2IDIzOCwxODQiCiAgICBmaWxsPSIjMGEwZjFmIiBvcGFjaXR5PSIwLjU1Ii8+CgogIDwhLS0gR2xvdyAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1NiwxNTIgMjgyLDE4NCAyNTYsMjE2IDIzMCwxODQiCiAgICBmaWxsPSJub25lIiBzdHJva2U9IiMyMmQzZWUiIHN0cm9rZS13aWR0aD0iNiIgb3BhY2l0eT0iMC4yNSIgZmlsdGVyPSJ1cmwoI2dsb3cpIi8+CgogIDxkZWZzPgogICAgPGZpbHRlciBpZD0iZ2xvdyIgeD0iLTUwJSIgeT0iLTUwJSIgd2lkdGg9IjIwMCUiIGhlaWdodD0iMjAwJSI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjgiIHJlc3VsdD0iYmx1ciIvPgogICAgICA8ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49ImJsdXIiLz48ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz48L2ZlTWVyZ2U+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDwhLS0gTkVYVVMgdGV4dCAtLT4KICA8dGV4dCB4PSIyNTYiIHk9IjQwOCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI0NCIgZmlsbD0iIzIyZDNlZSIKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI4IiBvcGFjaXR5PSIwLjg1Ij5ORVhVUzwvdGV4dD4KCiAgPCEtLSBTdWItbGFiZWwgLS0+CiAgPHRleHQgeD0iMjU2IiB5PSI0MzgiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiMyMmQzZWUiCiAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCIgb3BhY2l0eT0iMC40Ij5TRUxGLVNUVURZIEVOR0lORTwvdGV4dD4KPC9zdmc+Cg==">
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIk5FWFVTIFx1ODFlYVx1NWI3OFx1NWYxNVx1NjRjZSIsICJzaG9ydF9uYW1lIjogIk5FWFVTIiwgImRlc2NyaXB0aW9uIjogIlx1ODFlYVx1NWI3OFx1NmZjMFx1NTJmNVx1NWRlNVx1NTE3NyIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDUwNzBmIiwgInRoZW1lX2NvbG9yIjogIiMyMmQzZWUiLCAib3JpZW50YXRpb24iOiAiYW55IiwgImljb25zIjogW3sic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJajRLUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0l4TVRBaUlHWnBiR3c5SWlNd05UQTNNR1lpTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd0lpQjNhV1IwYUQwaU5EY3lJaUJvWldsbmFIUTlJalEzTWlJZ2NuZzlJamt3SWlCbWFXeHNQU0lqTUdFd1pqRm1JaTgrQ2p4d2IyeDVaMjl1SUhCdmFXNTBjejBpTWpVMkxERXdNQ0F6T0RBc01qVTJJREkxTml3ME1USWdNVE15TERJMU5pSWdabWxzYkQwaWJtOXVaU0lnYzNSeWIydGxQU0lqTWpKa00yVmxJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqRTRJaTgrQ2p4d2IyeDVaMjl1SUhCdmFXNTBjejBpTWpVMkxERTBPQ0F6TXpnc01qVTJJREkxTml3ek5qUWdNVGMwTERJMU5pSWdabWxzYkQwaUl6SXlaRE5sWlNJZ2IzQmhZMmwwZVQwaU1DNDVJaTgrQ2p4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTkRnd0lpQm1iMjUwTFdaaGJXbHNlVDBpYlc5dWIzTndZV05sSWlCbWIyNTBMWE5wZW1VOUlqVXlJaUJtYVd4c1BTSWpNakprTTJWbElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJaUJ2Y0dGamFYUjVQU0l3TGpjaVBrNUZXRlZUUEM5MFpYaDBQZ284TDNOMlp6ND0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS — 自學引擎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Mono:wght@400;700&family=Klee+One:wght@400;600&family=Yusei+Magic&family=Zen+Maru+Gothic:wght@400;500;700&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070f; --bg2:#0a0f1f; --panel:rgba(16,23,42,.62); --panel-solid:#101728;
+  --line:rgba(89,128,196,.22); --line-bright:rgba(34,211,238,.45);
+  --cyan:#22d3ee; --cyan-glow:rgba(34,211,238,.55);
+  --violet:#a855f7; --magenta:#e84ad8; --green:#34f5a0; --amber:#ffb347; --red:#ff5d73;
+  --txt:#e8eefb; --muted:#8593b0; --muted2:#5d6b8a;
+  --r:14px;
+  --orb1:rgba(168,85,247,.16); --orb2:rgba(34,211,238,.14);
+  --display:'Chakra Petch',sans-serif; --mono:'Space Mono',monospace; --body:'Noto Sans TC',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:var(--body); background:var(--bg); color:var(--txt);
+  overflow:hidden; -webkit-font-smoothing:antialiased; letter-spacing:.2px;
+}
+/* ---------- atmosphere ---------- */
+#bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+  radial-gradient(1200px 600px at 80% -10%, var(--orb1), transparent 60%),
+  radial-gradient(1000px 700px at -5% 100%, var(--orb2), transparent 55%),
+  linear-gradient(180deg,#05070f,#070b18 60%,#05070f);}
+/* decorations — contain:strict prevents layout recalcs from spreading */
+/* decorations removed — themes now fully restyle the interface */
+#grid{position:fixed;inset:0;z-index:-1;
+  background-image:linear-gradient(var(--gridc,var(--line)) 1px,transparent 1px),linear-gradient(90deg,var(--gridc,var(--line)) 1px,transparent 1px);
+  background-size:46px 46px; mask-image:radial-gradient(ellipse 90% 80% at 50% 30%,#000 30%,transparent 90%);
+  opacity:.5; animation:drift 40s linear infinite;
+  contain:strict}
+@keyframes drift{to{background-position:46px 46px}}
+#scan{position:fixed;inset:0;z-index:60;pointer-events:none;
+  background:linear-gradient(rgba(255,255,255,0) 50%,rgba(34,211,238,.018) 50%);background-size:100% 4px;mix-blend-mode:overlay;}
+
+/* ============ STRUCTURAL THEME STYLES ============ */
+/* default tech look needs no class. Each family below changes SHAPE & FEEL, not just color. */
+
+/* light/paper base: soften glows so text stays readable */
+body.light-theme #scan{display:none}
+body.light-theme .clock{text-shadow:none}
+body.light-theme .logo-mark,body.light-theme .logo-mark::after,body.light-theme .btn-primary{box-shadow:none}
+body.light-theme #grid{opacity:.7}
+body.light-theme .panel::before{opacity:.5}
+body.light-theme .note-body strong{color:var(--txt)}
+
+/* —— PAPER family (手帳/便利貼)：圓角、虛線框、輕微傾斜、貼紙感 —— */
+body.sty-paper #grid{background-image:none}
+body.sty-paper .panel{border-radius:18px;border-style:dashed;border-width:2px;box-shadow:3px 4px 0 rgba(120,100,75,.12)}
+body.sty-paper .panel::before{display:none}
+body.sty-paper .btn{border-radius:20px}
+body.sty-paper .nav-item{border-radius:14px}
+body.sty-paper .subj-card,body.sty-paper .ach,body.sty-paper .stat{border-radius:16px}
+body.sty-paper .chip{border-style:dashed}
+body.sty-paper .logo-mark{border-radius:8px;transform:rotate(45deg) scale(.92)}
+
+/* —— SOFT family (馬卡龍/雲朵)：超大圓角、無框、柔和陰影、膨膨的 —— */
+body.sty-soft #grid{display:none}
+body.sty-soft #scan{display:none}
+body.sty-soft .panel{border-radius:26px;border:none;box-shadow:0 10px 30px -12px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.05)}
+body.sty-soft .panel::before{display:none}
+body.sty-soft .btn{border-radius:30px;box-shadow:0 6px 16px -6px var(--cyan-glow)}
+body.sty-soft .nav-item{border-radius:18px}
+body.sty-soft .nav-item.active::before{display:none}
+body.sty-soft .nav-item.active{box-shadow:0 4px 14px -6px var(--cyan-glow)}
+body.sty-soft .subj-card,body.sty-soft .ach,body.sty-soft .stat{border-radius:22px;border:none;box-shadow:0 8px 22px -12px rgba(0,0,0,.15)}
+body.sty-soft .chip{border:none;background:var(--panel-solid);box-shadow:0 3px 10px -5px rgba(0,0,0,.2)}
+body.sty-soft .logo-mark{border-radius:50%;transform:none;border-width:3px}
+body.sty-soft .logo-mark::after{border-radius:50%}
+
+/* —— RETRO family (8-bit/像素)：完全直角、硬陰影、無模糊 —— */
+body.sty-retro *{--r:0px}
+body.sty-retro #grid{background-size:24px 24px;opacity:.25}
+body.sty-retro .panel{border-radius:0;border-width:2px;backdrop-filter:none;box-shadow:5px 5px 0 var(--line-bright)}
+body.sty-retro .panel::before{display:none}
+body.sty-retro .btn{border-radius:0;box-shadow:3px 3px 0 rgba(0,0,0,.4);text-transform:uppercase}
+body.sty-retro .nav-item{border-radius:0}
+body.sty-retro .nav-item.active{box-shadow:3px 3px 0 var(--line-bright)}
+body.sty-retro .nav-item.active::before{display:none}
+body.sty-retro .subj-card,body.sty-retro .ach,body.sty-retro .stat,body.sty-retro .chip{border-radius:0;border-width:2px}
+body.sty-retro .logo-mark{border-radius:0;transform:none}
+body.sty-retro .logo-mark::after{border-radius:0}
+body.sty-retro .clock{text-shadow:3px 3px 0 var(--cyan-glow)}
+
+/* —— BRUTAL family (極簡黑白/雜誌)：粗黑框、平面、無圓角、強對比 —— */
+body.sty-brutal #grid{display:none}
+body.sty-brutal #scan{display:none}
+body.sty-brutal .panel{border-radius:0;border-width:2.5px;border-color:var(--txt);backdrop-filter:none;box-shadow:6px 6px 0 var(--txt)}
+body.sty-brutal .panel::before{display:none}
+body.sty-brutal .btn{border-radius:0;border:2.5px solid var(--txt);box-shadow:4px 4px 0 var(--txt)}
+body.sty-brutal .btn-primary{background:var(--cyan);color:var(--bg)}
+body.sty-brutal .nav-item{border-radius:0}
+body.sty-brutal .nav-item.active{border:2px solid var(--txt);box-shadow:3px 3px 0 var(--txt);background:transparent}
+body.sty-brutal .nav-item.active::before{display:none}
+body.sty-brutal .subj-card,body.sty-brutal .ach,body.sty-brutal .stat{border-radius:0;border-width:2.5px;border-color:var(--txt);box-shadow:5px 5px 0 var(--txt)}
+body.sty-brutal .chip{border-radius:0;border:2px solid var(--txt)}
+body.sty-brutal .logo-mark{border-radius:0;transform:none;border-color:var(--txt);box-shadow:3px 3px 0 var(--txt)}
+body.sty-brutal .logo-mark::after{border-radius:0}
+body.sty-brutal .clock{text-shadow:none}
+
+/* —— TERMINAL family (終端機)：等寬字、方框、掃描感、極客 —— */
+body.sty-terminal #grid{opacity:.18}
+body.sty-terminal .panel{border-radius:4px;border-style:solid;box-shadow:inset 0 0 24px var(--orb2)}
+body.sty-terminal .panel::before{display:none}
+body.sty-terminal .btn{border-radius:4px;font-family:var(--mono);text-transform:uppercase;letter-spacing:1px}
+body.sty-terminal .nav-item{border-radius:4px;font-family:var(--mono)}
+body.sty-terminal .subj-card,body.sty-terminal .ach,body.sty-terminal .stat,body.sty-terminal .chip{border-radius:4px}
+body.sty-terminal h1,body.sty-terminal .page-head h1{font-family:var(--mono)!important}
+body.sty-terminal .logo-mark{border-radius:0;transform:none}
+body.sty-terminal .logo-mark::after{border-radius:0}
+body.sty-terminal #scan{background:linear-gradient(rgba(0,0,0,0) 50%,rgba(0,0,0,.12) 50%);background-size:100% 3px;mix-blend-mode:multiply;opacity:.5}
+
+/* —— NATURE family (自然山水)：有機圓角、葉脈分隔、柔和漸層 —— */
+body.sty-nature #grid{display:none}
+body.sty-nature #scan{display:none}
+body.sty-nature .panel{border-radius:8px 22px 8px 22px;border-width:1.5px;box-shadow:0 8px 24px -14px rgba(60,90,50,.35)}
+body.sty-nature .panel::before{height:2px;background:linear-gradient(90deg,transparent,var(--c1,var(--cyan)),transparent);opacity:.4}
+body.sty-nature .btn{border-radius:24px 8px 24px 8px}
+body.sty-nature .nav-item{border-radius:6px 16px 16px 6px}
+body.sty-nature .nav-item.active::before{border-radius:3px}
+body.sty-nature .subj-card,body.sty-nature .ach,body.sty-nature .stat{border-radius:8px 22px 8px 22px}
+body.sty-nature .chip{border-radius:20px}
+body.sty-nature .logo-mark{border-radius:50% 8px 50% 8px;transform:none}
+body.sty-nature .logo-mark::after{border-radius:50% 4px 50% 4px}
+
+/* —— VINTAGE family (復古懷舊)：圓角卡片、雙線框、深褐陰影、襯線字 —— */
+body.sty-vintage #grid{opacity:.12}
+body.sty-vintage #scan{display:none}
+body.sty-vintage .panel{border-radius:10px;border-width:1px;outline:1px solid var(--line);outline-offset:3px;box-shadow:0 6px 18px -10px rgba(80,50,20,.4)}
+body.sty-vintage .panel::before{display:none}
+body.sty-vintage .btn{border-radius:8px;outline:1px solid currentColor;outline-offset:2px;letter-spacing:1px}
+body.sty-vintage .nav-item{border-radius:6px}
+body.sty-vintage .subj-card,body.sty-vintage .ach,body.sty-vintage .stat{border-radius:10px;outline:1px solid var(--line);outline-offset:3px}
+body.sty-vintage .chip{border-radius:6px;outline:1px solid var(--line);outline-offset:2px}
+body.sty-vintage .logo-mark{border-radius:6px;transform:none}
+body.sty-vintage .logo-mark::after{border-radius:3px}
+body.sty-vintage .clock{text-shadow:2px 2px 0 var(--orb1)}
+
+/* —— COSMIC family (宇宙夢幻)：發光漸層邊、深邃陰影、星塵點綴 —— */
+body.sty-cosmic #grid{opacity:.2;background-size:60px 60px}
+body.sty-cosmic .panel{border-radius:18px;border:1px solid transparent;background-clip:padding-box;box-shadow:0 0 30px -10px var(--cyan-glow),inset 0 1px 0 rgba(255,255,255,.06)}
+body.sty-cosmic .panel::before{height:1px;background:linear-gradient(90deg,transparent,var(--magenta),var(--cyan),transparent);opacity:.6}
+body.sty-cosmic .btn{border-radius:22px}
+body.sty-cosmic .btn-primary{background:linear-gradient(120deg,var(--cyan),var(--violet),var(--magenta));background-size:200% 100%;animation:cosmicShift 6s ease infinite;color:#fff}
+@keyframes cosmicShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body.sty-cosmic .nav-item{border-radius:14px}
+body.sty-cosmic .subj-card,body.sty-cosmic .ach,body.sty-cosmic .stat{border-radius:16px;box-shadow:0 0 24px -14px var(--cyan-glow)}
+body.sty-cosmic .chip{border-radius:18px}
+body.sty-cosmic .logo-mark{border-radius:50%;transform:none;box-shadow:0 0 18px var(--cyan-glow)}
+body.sty-cosmic .logo-mark::after{border-radius:50%}
+body.sty-cosmic .clock{text-shadow:0 0 28px var(--cyan-glow),0 0 8px var(--magenta)}
+
+/* —— NORDIC family (極簡北歐)：細線、大留白、無陰影、淡雅 —— */
+body.sty-nordic #grid{display:none}
+body.sty-nordic #scan{display:none}
+body.sty-nordic .panel{border-radius:12px;border-width:1px;backdrop-filter:none;box-shadow:none}
+body.sty-nordic .panel::before{display:none}
+body.sty-nordic .btn{border-radius:10px;box-shadow:none;font-weight:500;letter-spacing:.5px}
+body.sty-nordic .btn-primary{box-shadow:none}
+body.sty-nordic .nav-item{border-radius:10px}
+body.sty-nordic .nav-item.active{background:var(--panel);box-shadow:none}
+body.sty-nordic .nav-item.active::before{display:none}
+body.sty-nordic .subj-card,body.sty-nordic .ach,body.sty-nordic .stat{border-radius:12px;border-width:1px;box-shadow:none}
+body.sty-nordic .chip{border-radius:10px;border-width:1px}
+body.sty-nordic .logo-mark{border-radius:4px;transform:none;box-shadow:none;border-width:2px}
+body.sty-nordic .logo-mark::after{border-radius:2px;box-shadow:none}
+body.sty-nordic .clock{text-shadow:none;font-weight:600}
+/* pause ALL CSS animations when tab is hidden */
+body.page-hidden *{animation-play-state:paused!important;transition:none!important}
+/* ---------- layout ---------- */
+#app{display:grid;grid-template-columns:248px 1fr;grid-template-rows:60px 1fr;height:100vh;grid-template-areas:"logo top" "side main";}
+header.top{grid-area:top;display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:0 22px;border-bottom:1px solid var(--line);backdrop-filter:blur(6px);}
+.brand{grid-area:logo;display:flex;align-items:center;gap:11px;padding:0 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);}
+.logo-mark{width:30px;height:30px;border:1.5px solid var(--cyan);position:relative;transform:rotate(45deg);box-shadow:0 0 14px var(--cyan-glow);}
+.logo-mark::after{content:"";position:absolute;inset:5px;background:var(--cyan);opacity:.85;box-shadow:0 0 10px var(--cyan-glow);}
+.brand b{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:3px}
+.brand small{font-family:var(--mono);font-size:9px;color:var(--muted2);letter-spacing:2px;display:block;margin-top:-2px}
+nav.side{grid-area:side;border-right:1px solid var(--line);padding:18px 12px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+.nav-label{font-family:var(--mono);font-size:10px;color:var(--muted2);letter-spacing:2px;margin:16px 10px 6px}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;cursor:pointer;color:var(--muted);font-size:14px;font-weight:500;transition:.18s;border:1px solid transparent;position:relative}
+.nav-item .ic{width:18px;text-align:center;font-size:15px;flex-shrink:0}
+.nav-item:hover{color:var(--txt);background:rgba(34,211,238,.05)}
+.nav-item.active{color:var(--txt);background:linear-gradient(90deg,rgba(34,211,238,.16),transparent);border-color:var(--line-bright)}
+.nav-item.active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--cyan);border-radius:3px;box-shadow:0 0 10px var(--cyan-glow)}
+.nav-item .dot{width:8px;height:8px;border-radius:50%;margin-left:auto;flex-shrink:0}
+.add-subj{margin-top:6px;border:1px dashed var(--line-bright);color:var(--cyan);justify-content:center;font-family:var(--mono);font-size:12px}
+main{grid-area:main;overflow-y:auto;padding:26px 30px 60px;position:relative}
+/* ---------- chips ---------- */
+.chip{display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:30px;border:1px solid var(--line);font-family:var(--mono);font-size:12px;background:var(--panel)}
+.chip b{font-size:14px;letter-spacing:.5px}
+.chip.lvl{border-color:rgba(168,85,247,.45);color:#d9b4ff}
+.chip.pts{border-color:rgba(34,211,238,.4);color:var(--cyan)}
+.chip.streak{border-color:rgba(255,179,71,.45);color:var(--amber)}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;font-size:16px;transition:.18s}
+.icon-btn:hover{color:var(--cyan);border-color:var(--line-bright)}
+/* ---------- generic ---------- */
+.view{display:none;animation:fade .4s ease both}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:12px}
+.page-head h1{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:1px}
+.page-head .sub{font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:1.5px;margin-top:3px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(8px);position:relative;overflow:hidden}
+.panel::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--line-bright),transparent)}
+.pad{padding:20px}
+.label{font-family:var(--mono);font-size:10px;color:var(--muted2);letter-spacing:2px;text-transform:uppercase}
+.grid{display:grid;gap:16px}
+.btn{font-family:var(--display);font-weight:600;letter-spacing:1px;border:none;border-radius:10px;padding:12px 20px;cursor:pointer;font-size:14px;transition:.18s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),#0ea5c4);color:#04121a;box-shadow:0 0 22px rgba(34,211,238,.35)}
+.btn-primary:hover{box-shadow:0 0 32px rgba(34,211,238,.6);transform:translateY(-1px)}
+.btn-ghost{background:rgba(34,211,238,.08);color:var(--cyan);border:1px solid var(--line-bright)}
+.btn-ghost:hover{background:rgba(34,211,238,.16)}
+.btn-danger{background:rgba(255,93,115,.1);color:var(--red);border:1px solid rgba(255,93,115,.3)}
+.btn-danger:hover{background:rgba(255,93,115,.2)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none}
+/* ---------- dashboard ---------- */
+.dash-grid{grid-template-columns:1.4fr 1fr}
+@media(max-width:1050px){.dash-grid{grid-template-columns:1fr}}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+@media(max-width:760px){.stat-row{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:16px}
+.stat .v{font-family:var(--display);font-size:28px;font-weight:700;line-height:1;margin:8px 0 2px}
+.stat .v small{font-size:13px;color:var(--muted);font-weight:400}
+.stat.c-cyan .v{color:var(--cyan)} .stat.c-amber .v{color:var(--amber)}
+.stat.c-violet .v{color:#cf9bff} .stat.c-green .v{color:var(--green)}
+.lvlbar{height:8px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:10px}
+.lvlbar i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--magenta));box-shadow:0 0 12px rgba(232,74,216,.6);transition:width .6s}
+/* quick start */
+.kick{padding:24px;background:linear-gradient(135deg,rgba(52,245,160,.1),rgba(34,211,238,.05));border:1px solid rgba(52,245,160,.3)}
+.kick h3{font-family:var(--display);font-size:20px;letter-spacing:1px;margin-bottom:4px}
+.kick p{color:var(--muted);font-size:13px;margin-bottom:16px;line-height:1.6}
+/* timer */
+.timer-wrap{text-align:center;padding:24px}
+.tmodes{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.tmode{font-family:var(--mono);font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--line);color:var(--muted);cursor:pointer;background:transparent}
+.tmode.on{border-color:var(--line-bright);color:var(--cyan);background:rgba(34,211,238,.08)}
+.clock{font-family:var(--display);font-weight:700;font-size:64px;letter-spacing:3px;line-height:1;margin:6px 0 4px;text-shadow:0 0 24px var(--cyan-glow)}
+.clock.run{color:var(--cyan)}
+.tlabel{font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:2px;margin-bottom:18px}
+.tbtns{display:flex;gap:10px;justify-content:center}
+/* chart */
+.bars{display:flex;align-items:flex-end;gap:10px;height:130px;padding:8px 4px 0}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bar{width:100%;max-width:30px;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--cyan),rgba(34,211,238,.18));min-height:3px;box-shadow:0 0 10px rgba(34,211,238,.25);transition:height .5s}
+.bar.today{background:linear-gradient(180deg,var(--magenta),rgba(232,74,216,.2));box-shadow:0 0 12px rgba(232,74,216,.4)}
+.bar-lbl{font-family:var(--mono);font-size:10px;color:var(--muted2)}
+.bar-val{font-family:var(--mono);font-size:10px;color:var(--cyan)}
+/* subjects */
+.subj-grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.subj-card{padding:18px;cursor:pointer;transition:.2s;border-left:3px solid var(--cyan)}
+.subj-card:hover{transform:translateY(-3px);border-color:var(--line-bright)}
+.subj-card h3{font-size:17px;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.subj-meta{font-family:var(--mono);font-size:11px;color:var(--muted2);display:flex;gap:14px;margin-top:12px}
+.tag{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:20px;border:1px solid var(--line);color:var(--muted)}
+/* ========== DATABASE STYLES ========== */
+.db-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.db-search{flex:1;min-width:180px;max-width:320px}
+.db-search input{padding:9px 14px;font-size:13px}
+.db-filters{display:flex;gap:6px;flex-wrap:wrap}
+.filter-chip{font-family:var(--mono);font-size:11px;padding:5px 12px;border-radius:20px;border:1px solid var(--line);color:var(--muted);cursor:pointer;background:var(--panel);transition:.15s;white-space:nowrap}
+.filter-chip:hover{color:var(--cyan);border-color:var(--line-bright)}
+.filter-chip.on{color:var(--cyan);border-color:var(--cyan);background:rgba(34,211,238,.1)}
+.db-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.db-card{padding:16px 18px;cursor:pointer;transition:.2s;border-left:3px solid var(--muted2);position:relative}
+.db-card:hover{transform:translateY(-2px)}
+.db-card .dc-icon{font-size:26px;margin-bottom:10px}
+.db-card .dc-name{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:.3px;margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.db-card .dc-cat{font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:12px;border:1px solid var(--line);display:inline-block;margin-bottom:8px}
+.db-card .dc-meta{font-family:var(--mono);font-size:10px;color:var(--muted2);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.db-card .dc-del{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:7px;border:1px solid rgba(255,93,115,.3);background:transparent;color:var(--muted2);cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;opacity:0;transition:.15s}
+.db-card:hover .dc-del{opacity:1}
+.dc-del:hover{background:rgba(255,93,115,.15);color:var(--red)!important;border-color:var(--red)}
+/* file type color dots */
+.ft-pdf{border-left-color:#ff5d73!important}
+.ft-word{border-left-color:#5b8cff!important}
+.ft-image{border-left-color:#34f5a0!important}
+.ft-text{border-left-color:#ffb347!important}
+.ft-other{border-left-color:#a855f7!important}
+/* preview modal */
+.preview-overlay{position:fixed;inset:0;background:rgba(2,4,10,.88);backdrop-filter:blur(6px);z-index:110;display:none;align-items:center;justify-content:center;padding:20px}
+.preview-overlay.on{display:flex}
+.preview-modal{width:100%;max-width:820px;max-height:90vh;background:var(--panel-solid);border:1px solid var(--line-bright);border-radius:16px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 0 80px rgba(34,211,238,.12)}
+.preview-head{display:flex;align-items:center;gap:14px;padding:18px 22px;border-bottom:1px solid var(--line);flex-shrink:0}
+.preview-head .ph-icon{font-size:24px}
+.preview-head .ph-title{font-family:var(--display);font-size:17px;font-weight:600;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.preview-head .ph-cat{font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}
+.preview-body{flex:1;overflow:auto;padding:22px 26px}
+.preview-img{max-width:100%;max-height:60vh;object-fit:contain;border-radius:8px;display:block;margin:0 auto}
+.preview-text{font-family:var(--mono);font-size:13px;line-height:1.75;color:var(--txt);white-space:pre-wrap;word-break:break-all}
+.preview-pdf{width:100%;height:60vh;border-radius:8px;border:1px solid var(--line)}
+.preview-foot{padding:14px 22px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end;flex-shrink:0}
+/* upload dropzone */
+.db-drop{border:1.5px dashed var(--line-bright);border-radius:14px;padding:32px;text-align:center;cursor:pointer;transition:.2s;color:var(--muted);margin-bottom:20px}
+.db-drop:hover,.db-drop.over{background:rgba(34,211,238,.05);color:var(--cyan);border-color:var(--cyan)}
+.db-drop .dd-icon{font-size:36px;margin-bottom:10px}
+.db-drop .dd-main{font-size:15px;font-weight:500;margin-bottom:5px}
+.db-drop .dd-sub{font-family:var(--mono);font-size:11px;color:var(--muted2)}
+/* upload progress */
+.up-progress{display:flex;align-items:center;gap:12px;padding:12px 15px;background:rgba(34,211,238,.05);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+.up-progress .up-name{flex:1;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.up-bar{flex:2;height:4px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.up-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));transition:width .3s}
+/* category manager */
+.cat-list{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cat-badge{font-family:var(--mono);font-size:11px;padding:5px 12px;border-radius:20px;border:1px solid var(--line);color:var(--muted);cursor:pointer;background:var(--panel);display:flex;align-items:center;gap:6px}
+.cat-badge .cb-del{color:var(--muted2);font-size:10px;line-height:1}
+.cat-badge .cb-del:hover{color:var(--red)}
+/* empty state */
+.db-empty{text-align:center;color:var(--muted2);padding:60px 20px}
+.db-empty .de-icon{font-size:48px;margin-bottom:14px;opacity:.4}
+.db-empty .de-title{font-family:var(--display);font-size:18px;margin-bottom:6px;color:var(--muted)}
+.db-empty .de-sub{font-size:13px;line-height:1.7}
+/* subject detail */
+.detail-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.back{font-family:var(--mono);font-size:12px;color:var(--cyan);cursor:pointer;border:1px solid var(--line-bright);padding:7px 12px;border-radius:8px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:980px){.split{grid-template-columns:1fr}}
+.txt-item{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;margin-top:10px;font-size:13px}
+.txt-item .nm{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.txt-item .sz{font-family:var(--mono);font-size:10px;color:var(--muted2)}
+.mini{font-size:11px;padding:6px 11px;border-radius:8px}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
+.note-h{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(34,211,238,.04)}
+.note-h .nt{flex:1;font-family:var(--display);font-size:14px;letter-spacing:.5px}
+.note-body{padding:6px 20px 18px;max-height:520px;overflow-y:auto;line-height:1.75;font-size:14px}
+.note-body h2{font-family:var(--display);font-size:19px;color:var(--cyan);margin:20px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.note-body h3{font-family:var(--display);font-size:16px;color:#cf9bff;margin:16px 0 6px}
+.note-body h4{font-size:14px;color:var(--amber);margin:12px 0 4px}
+.note-body p{margin:8px 0;color:#d7deef}
+.note-body ul,.note-body ol{margin:8px 0 8px 22px}
+.note-body li{margin:5px 0;color:#d7deef}
+.note-body strong{color:#fff}
+.note-body code{font-family:var(--mono);background:rgba(34,211,238,.1);padding:1px 6px;border-radius:5px;font-size:12px;color:var(--cyan)}
+.note-body pre{background:#070b16;border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto;margin:10px 0}
+.note-foot{padding:12px 16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.quiz-done{font-family:var(--mono);font-size:11px;color:var(--green)}
+/* chat */
+.chat-box{display:flex;flex-direction:column;height:560px}
+.chat-log{flex:1;overflow-y:auto;padding:4px 4px 12px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:88%;padding:11px 14px;border-radius:12px;font-size:13.5px;line-height:1.65}
+.msg.u{align-self:flex-end;background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(34,211,238,.08));border:1px solid var(--line-bright)}
+.msg.a{align-self:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.msg.a strong{color:var(--cyan)}.msg.a code{font-family:var(--mono);color:var(--cyan);font-size:12px}
+.chat-in{display:flex;gap:8px;margin-top:10px}
+.chat-in input{flex:1}
+input,textarea,select{font-family:var(--body);background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:9px;color:var(--txt);padding:11px 13px;font-size:13.5px;outline:none;transition:.18s;width:100%}
+input:focus,textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(34,211,238,.12)}
+.empty{text-align:center;color:var(--muted2);padding:40px 20px;font-size:13px}
+.empty .big{font-size:34px;margin-bottom:10px;opacity:.5}
+/* achievements */
+.ach-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.ach{padding:16px;text-align:center;position:relative;transition:.2s;opacity:.5;filter:grayscale(.8)}
+.ach.unlocked{opacity:1;filter:none}
+.ach.unlocked:hover{transform:translateY(-3px)}
+.ach .ai{font-size:30px;margin-bottom:8px}
+.ach .an{font-family:var(--display);font-size:14px;font-weight:600;letter-spacing:.5px}
+.ach .ad{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5}
+.ach .ap{font-family:var(--mono);font-size:10px;color:var(--cyan);margin-top:8px}
+.ach.unlocked::after{content:"✓";position:absolute;top:10px;right:12px;color:var(--green);font-size:13px;font-weight:700}
+.ach-cat{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--muted2);margin:22px 0 10px;text-transform:uppercase}
+.prog-wrap{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.prog-bar{flex:1;height:8px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+.prog-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--green));box-shadow:0 0 10px rgba(52,245,160,.5)}
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(2,4,10,.72);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.overlay.on{display:flex}
+.modal{width:100%;max-width:440px;background:var(--panel-solid);border:1px solid var(--line-bright);border-radius:16px;padding:26px;box-shadow:0 0 60px rgba(34,211,238,.15)}
+.modal h2{font-family:var(--display);font-size:20px;margin-bottom:6px;letter-spacing:.5px}
+.modal p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:6px}
+.modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:8px}
+.swatch{display:flex;gap:8px;flex-wrap:wrap}
+.swatch i{width:26px;height:26px;border-radius:7px;cursor:pointer;border:2px solid transparent}
+.swatch i.on{border-color:#fff}
+.note-tip{font-size:11px;color:var(--muted2);background:rgba(255,179,71,.08);border:1px solid rgba(255,179,71,.25);border-radius:8px;padding:9px 12px;line-height:1.6}
+/* toast */
+#toasts{position:fixed;bottom:24px;right:24px;z-index:200;display:flex;flex-direction:column;gap:10px}
+.toast{background:var(--panel-solid);border:1px solid var(--line-bright);border-radius:12px;padding:13px 18px;display:flex;align-items:center;gap:13px;min-width:260px;box-shadow:0 0 30px rgba(34,211,238,.2);animation:slideIn .4s ease both}
+.toast.ach-toast{border-color:var(--amber);box-shadow:0 0 30px rgba(255,179,71,.3)}
+@keyframes slideIn{from{transform:translateX(120%);opacity:0}to{transform:none;opacity:1}}
+.toast .ti{font-size:26px}
+.toast .tt b{font-family:var(--display);font-size:14px;letter-spacing:.5px;display:block}
+.toast .tt span{font-size:11px;color:var(--muted)}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(34,211,238,.3);border-top-color:var(--cyan);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:rgba(89,128,196,.25);border-radius:6px}::-webkit-scrollbar-track{background:transparent}
+/* mobile */
+@media(max-width:680px){
+  #app{grid-template-columns:1fr;grid-template-rows:54px auto 1fr;grid-template-areas:"logo" "side" "main"}
+  .brand{border-right:none}.top{display:none}
+  nav.side{flex-direction:row;overflow-x:auto;padding:10px;border-right:none;border-bottom:1px solid var(--line)}
+  .nav-label{display:none}.nav-item{white-space:nowrap;flex-shrink:0}
+  main{padding:18px}
+}
+</style>
+</head>
+<body>
+<div id="bg"></div><div id="grid"></div><div id="scan"></div>
+
+<div id="app">
+  <div class="brand">
+    <div class="logo-mark"></div>
+    <div><b>NEXUS</b><small>SELF-STUDY ENGINE</small></div>
+  </div>
+  <header class="top">
+    <div class="chip lvl">LV <b id="hLvl">1</b></div>
+    <div class="chip pts">◆ <b id="hPts">0</b></div>
+    <div class="chip streak">🔥 <b id="hStreak">0</b></div>
+    <button class="icon-btn" id="btnSettings" title="設定">⚙</button>
+  </header>
+
+  <nav class="side">
+    <div class="nav-label">主控</div>
+    <div class="nav-item active" data-view="dash"><span class="ic">◈</span> 儀表板</div>
+    <div class="nav-item" data-view="ach"><span class="ic">✦</span> 成就殿堂</div>
+    <div class="nav-item" data-view="store"><span class="ic">🎁</span> 獎勵商店</div>
+    <div class="nav-label">學習資料庫</div>
+    <div class="nav-item" data-view="db"><span class="ic">🗄</span> 資料庫總覽</div>
+    <div id="subjNav"></div>
+    <div class="nav-item add-subj" id="btnAddSubj">＋ 新增分類</div>
+  </nav>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section class="view active" id="view-dash">
+      <div class="page-head">
+        <div><h1 id="greet">指揮中心</h1><div class="sub" id="dateLine">// SYSTEM ONLINE</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="panel stat c-cyan"><div class="label">今日專注</div><div class="v" id="sToday">0<small> 分</small></div></div>
+        <div class="panel stat c-amber"><div class="label">連續天數</div><div class="v" id="sStreak">0<small> 天</small></div></div>
+        <div class="panel stat c-violet"><div class="label">可用點數</div><div class="v" id="sPts">0</div></div>
+        <div class="panel stat c-green"><div class="label">資料庫檔案</div><div class="v" id="sFiles">0<small> 份</small></div></div>
+      </div>
+      <div class="grid dash-grid">
+        <div class="grid" style="gap:16px">
+          <div class="panel pad">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div class="label">學者等級</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--muted)" id="lvlText">LV 1 · 0/300 XP</div>
+            </div>
+            <div style="font-family:var(--display);font-size:22px;font-weight:700;margin-top:6px" id="lvlTitle">見習生</div>
+            <div class="lvlbar"><i id="lvlFill" style="width:0%"></i></div>
+          </div>
+          <div class="panel kick">
+            <h3>⚡ 破冰計時</h3>
+            <p>開不了頭？別想太多。按下去先開始——計時器會<b style="color:var(--green)">正數記錄</b>你的學習時間，隨時按<b style="color:var(--cyan)">暫停</b>即可存入時數。大腦最難的是「啟動」，不是「持續」。</p>
+            <button class="btn btn-primary" id="btnKick">立即啟動 →</button>
+          </div>
+          <div class="panel pad">
+            <div class="label">近 7 日專注（分鐘）</div>
+            <div class="bars" id="weekBars"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="timer-wrap">
+            <div class="label" style="margin-bottom:14px">專注計時器</div>
+            <div class="tmodes">
+              <div class="tmode on" data-min="25">番茄 25′</div>
+              <div class="tmode" data-min="45">深焦 45′</div>
+            </div>
+            <div class="clock" id="clock">25:00</div>
+            <div class="tlabel" id="tStatus">// READY</div>
+            <div class="tbtns">
+              <button class="btn btn-primary" id="btnStart">開始專注</button>
+              <button class="btn btn-ghost" id="btnReset">重設</button>
+            </div>
+          </div>
+          <div class="pad" style="border-top:1px solid var(--line)">
+            <div class="label" style="margin-bottom:10px">近期解鎖</div>
+            <div id="recentAch" style="display:flex;flex-direction:column;gap:8px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="view" id="view-ach">
+      <div class="page-head"><div><h1>成就殿堂</h1><div class="sub">// ACHIEVEMENTS UNLOCKED</div></div></div>
+      <div class="prog-wrap">
+        <div class="prog-bar"><i id="achProg" style="width:0%"></i></div>
+        <div style="font-family:var(--mono);font-size:13px;color:var(--cyan)" id="achProgT">0 / 0</div>
+      </div>
+      <div id="achList"></div>
+    </section>
+
+    <!-- STORE -->
+    <section class="view" id="view-store">
+      <div class="page-head">
+        <div><h1>外觀商店</h1><div class="sub">// COSMETIC EXCHANGE</div></div>
+        <div class="chip pts" style="font-size:13px">可用點數 ◆ <b id="storeBal">0</b></div>
+      </div>
+      <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:20px;max-width:640px">用努力賺來的點數，解鎖各種<b style="color:var(--cyan)">設計風格主題</b>（科技、像素、手帳、雜誌、終端機…整個介面都會換），以及最重要的——<b style="color:var(--amber)">生活犒賞</b> 🎁</p>
+      <div id="storeList"></div>
+      <div class="panel pad" style="margin-top:22px">
+        <div class="label" style="margin-bottom:12px">解鎖紀錄</div>
+        <div id="redeemLog"></div>
+      </div>
+    </section>
+
+    <!-- DATABASE OVERVIEW -->
+    <section class="view" id="view-db">
+      <div class="page-head">
+        <div><h1>學習資料庫</h1><div class="sub">// KNOWLEDGE REPOSITORY</div></div>
+        <button class="btn btn-primary" id="btnUploadGlobal" style="font-size:13px">⬆ 匯入檔案</button>
+      </div>
+      <!-- Upload zone -->
+      <div class="db-drop" id="dbDropGlobal">
+        <div class="dd-icon">🗄</div>
+        <div class="dd-main">拖曳或點擊匯入學習資料</div>
+        <div class="dd-sub">支援 PDF · Word (.docx) · 圖片 (JPG/PNG/GIF/WebP) · 純文字 (.txt / .md)</div>
+      </div>
+      <input type="file" id="dbFileInput" multiple accept=".pdf,.doc,.docx,.txt,.md,.markdown,.jpg,.jpeg,.png,.gif,.webp" style="display:none">
+      <div id="dbUploadProgress"></div>
+      <!-- Toolbar -->
+      <div class="db-toolbar">
+        <div class="db-search"><input id="dbSearch" placeholder="🔍 搜尋檔案名稱或分類…"></div>
+        <div class="db-filters" id="dbFilters"></div>
+      </div>
+      <!-- Grid -->
+      <div id="dbGrid"></div>
+    </section>
+
+    <!-- SUBJECT / CATEGORY DETAIL -->
+    <section class="view" id="view-subj">
+      <div class="detail-head">
+        <div class="back" id="backToList">← 返回</div>
+        <h1 id="subjTitle" style="font-family:var(--display);font-size:24px"></h1>
+        <span class="tag" id="subjTag"></span>
+        <button class="btn btn-ghost mini" id="delSubj" style="margin-left:auto;border-color:var(--red);color:var(--red)">🗑 刪除分類</button>
+      </div>
+      <!-- Category DB view -->
+      <div id="catDbSection">
+        <div class="db-drop" id="catDrop">
+          <div class="dd-icon">📂</div>
+          <div class="dd-main">匯入檔案到此分類</div>
+          <div class="dd-sub">支援 PDF · Word · 圖片 · 純文字</div>
+        </div>
+        <input type="file" id="catFileInput" multiple accept=".pdf,.doc,.docx,.txt,.md,.markdown,.jpg,.jpeg,.png,.gif,.webp" style="display:none">
+        <div id="catUploadProgress"></div>
+        <div class="db-toolbar" style="margin-top:14px">
+          <div class="db-search"><input id="catSearch" placeholder="🔍 搜尋此分類中的檔案…"></div>
+        </div>
+        <div id="catDbGrid"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- FILE PREVIEW MODAL -->
+<div class="preview-overlay" id="previewOverlay">
+  <div class="preview-modal">
+    <div class="preview-head">
+      <span class="ph-icon" id="pvIcon"></span>
+      <span class="ph-title" id="pvTitle"></span>
+      <span class="ph-cat" id="pvCat"></span>
+      <button class="btn btn-ghost mini" id="pvClose" style="flex-shrink:0">✕ 關閉</button>
+    </div>
+    <div class="preview-body" id="pvBody"></div>
+    <div class="preview-foot">
+      <button class="btn btn-ghost mini" id="pvRename">✏ 重新命名</button>
+      <button class="btn btn-danger mini" id="pvDelete">🗑 刪除</button>
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS MODAL -->
+<div class="overlay" id="setModal">
+  <div class="modal">
+    <h2>⚙ 設定</h2>
+    <p>填入 Anthropic API 金鑰可啟用 AI 問答功能（可選）。金鑰僅存於本機，不會上傳。</p>
+    <div class="field">
+      <label>ANTHROPIC API KEY（選填）</label>
+      <input type="password" id="apiKeyIn" placeholder="sk-ant-...">
+    </div>
+    <div class="note-tip">💡 還沒有金鑰？可至 console.anthropic.com 申請。</div>
+    <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--line)">
+      <label style="display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:8px">存檔備份（換電腦可攜帶）</label>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ghost mini" id="exportData" style="flex:1;justify-content:center">⬇ 匯出存檔</button>
+        <button class="btn btn-ghost mini" id="importData" style="flex:1;justify-content:center">⬆ 匯入存檔</button>
+      </div>
+      <input type="file" id="importFile" accept=".json,application/json" style="display:none">
+      <div class="note-tip" style="margin-top:8px">匯出會下載一個 .json 檔；在另一台電腦的設定裡「匯入存檔」即可還原所有進度。匯入會覆蓋目前資料。</div>
+    </div>
+    <div id="testRow" style="display:none;margin-top:14px"><button class="btn btn-ghost" id="topUp" style="width:100%;justify-content:center;border-color:var(--amber);color:var(--amber)">🧪 補滿測試點數（重設為 100000）</button></div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" id="resetData">清除所有資料</button>
+      <button class="btn btn-primary" id="saveSet">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD CATEGORY MODAL -->
+<div class="overlay" id="subjModal">
+  <div class="modal">
+    <h2>＋ 新增分類</h2>
+    <p>為學習資料建立分類，方便組織與查找。</p>
+    <div class="field">
+      <label>分類名稱</label>
+      <input id="subjNameIn" placeholder="例如：高中化學、近代史、微積分…">
+    </div>
+    <div class="field">
+      <label>主題色</label>
+      <div class="swatch" id="swatch"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" id="cancelSubj">取消</button>
+      <button class="btn btn-primary" id="createSubj">建立</button>
+    </div>
+  </div>
+</div>
+
+<!-- RENAME MODAL -->
+<div class="overlay" id="renameModal">
+  <div class="modal">
+    <h2>✏ 重新命名</h2>
+    <div class="field">
+      <label>新名稱</label>
+      <input id="renameInput" placeholder="輸入新名稱…">
+    </div>
+    <div class="field">
+      <label>分類（選填）</label>
+      <select id="renameCatSelect"></select>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" id="cancelRename">取消</button>
+      <button class="btn btn-primary" id="saveRename">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- REWARD EDIT MODAL -->
+<div class="overlay" id="rewardModal">
+  <div class="modal">
+    <h2 id="rewardModalTitle">＋ 新增獎勵</h2>
+    <p>自訂你想用點數兌換的犒賞，並設定價格。</p>
+    <div class="field">
+      <label>圖示（emoji）</label>
+      <input id="rewardIconIn" maxlength="4" placeholder="例如：🍿 🎁 🎮" style="width:100px;text-align:center;font-size:20px">
+    </div>
+    <div class="field">
+      <label>名稱</label>
+      <input id="rewardNameIn" placeholder="例如：吃一頓大餐">
+    </div>
+    <div class="field">
+      <label>說明（選填）</label>
+      <input id="rewardDescIn" placeholder="例如：辛苦了，好好享受一頓">
+    </div>
+    <div class="field">
+      <label>價格（點數）</label>
+      <input id="rewardCostIn" type="number" min="1" step="1" placeholder="例如：300">
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" id="cancelReward">取消</button>
+      <button class="btn btn-primary" id="saveReward">儲存</button>
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script>
+"use strict";
+/* ===================== BUILD FLAG ===================== */
+const TEST=false; /*__BUILD_FLAG__*/ // 測試版會被自動改成 true
+/* ===================== STORAGE ===================== */
+const KEY=TEST?"nexus_study_v2_test":"nexus_study_v2";
+let mem=null;
+function save(){ try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){mem=JSON.stringify(state);} }
+function load(){ try{const s=localStorage.getItem(KEY); if(s)return JSON.parse(s);}catch(e){} if(mem)try{return JSON.parse(mem)}catch(e){} return null; }
+
+/* ===================== STATE ===================== */
+function freshState(){return{
+  apiKey:"", points:TEST?100000:0, lifetime:TEST?100000:0,
+  streak:{count:0,longest:0,lastDate:null},
+  stats:{focusSec:0,sessions:0,pomos:0,imports:0,quizzes:0,redeems:0,lifeRedeems:0},
+  days:{}, flags:{}, subjects:[], unlocked:{},
+  shop:{ownedThemes:["default"],ownedDecos:[],theme:"default",decos:[]}, redeemLog:[],
+  rewards:null, // 生活獎勵（可自訂）；null 代表尚未初始化，會在啟動時填入預設
+  db:[] // [{id,name,catId,type,size,dataUrl,addedAt,notes}]
+};}
+let state=load()||freshState();
+state=Object.assign(freshState(),state);
+state.stats=Object.assign(freshState().stats,state.stats||{});
+state.streak=Object.assign(freshState().streak,state.streak||{});
+if(state.lifetime==null||state.lifetime<state.points)state.lifetime=Math.max(state.lifetime||0,state.points||0);
+if(!Array.isArray(state.redeemLog))state.redeemLog=[];
+if(!state.shop)state.shop={ownedThemes:["default"],ownedDecos:[],theme:"default",decos:[]};
+if(!Array.isArray(state.shop.ownedThemes)||!state.shop.ownedThemes.length)state.shop.ownedThemes=["default"];
+if(!Array.isArray(state.shop.ownedDecos))state.shop.ownedDecos=[];
+if(!Array.isArray(state.shop.decos))state.shop.decos=[];
+if(!state.shop.theme)state.shop.theme="default";
+if(!Array.isArray(state.db))state.db=[];
+// migrate old subjects: preserve categories but clear old texts/notes
+state.subjects.forEach(s=>{
+  if(s.texts&&s.texts.length){
+    // migrate old text imports to db
+    s.texts.forEach(t=>{
+      if(!state.db.find(d=>d.id===t.id)){
+        state.db.push({id:t.id,name:t.title||"匯入文字",catId:s.id,type:"text",size:t.content?t.content.length:0,dataUrl:null,textContent:t.content,addedAt:Date.now()});
+      }
+    });
+    s.texts=[];
+  }
+  delete s.notes; delete s.chat;
+});
+
+/* ===================== COLORS / HELPERS ===================== */
+const COLORS=["#22d3ee","#a855f7","#34f5a0","#ffb347","#e84ad8","#5b8cff","#ff5d73","#5eead4"];
+const todayStr=()=>{const d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();};
+const dStr=d=>d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7);}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function fmtSize(bytes){if(bytes<1024)return bytes+"B";if(bytes<1048576)return(bytes/1024).toFixed(0)+"KB";return(bytes/1048576).toFixed(1)+"MB";}
+function fileType(name,mime){
+  const ext=(name||"").split(".").pop().toLowerCase();
+  if(["pdf"].includes(ext)||mime==="application/pdf")return"pdf";
+  if(["doc","docx"].includes(ext)||mime?.includes("word"))return"word";
+  if(["jpg","jpeg","png","gif","webp"].includes(ext)||mime?.startsWith("image/"))return"image";
+  if(["txt","md","markdown","csv","text"].includes(ext))return"text";
+  return"other";
+}
+const FT_ICON={pdf:"📄",word:"📝",image:"🖼",text:"📃",other:"📦"};
+const FT_LABEL={pdf:"PDF",word:"Word",image:"圖片",text:"文字",other:"其他"};
+
+/* ===================== LEVELS ===================== */
+const TITLES=["見習生","學徒","研習者","鑽研者","學者","專家","大師","宗師","賢者","傳奇"];
+function levelInfo(p){let lvl=1,need=300,acc=0;while(p>=acc+need){acc+=need;lvl++;need=Math.round(need*1.35);}return{lvl,into:p-acc,need,pct:(p-acc)/need};}
+function titleOf(lvl){return TITLES[Math.min(lvl-1,TITLES.length-1)];}
+
+/* ===================== ACHIEVEMENTS ===================== */
+const HOURS=()=>state.stats.focusSec/3600;
+const ACHS=[
+ {id:"first",c:"啟程",i:"🚀",n:"初次啟程",d:"完成第一次專注",p:30,f:s=>s.stats.sessions>=1},
+ {id:"kick",c:"啟程",i:"🧊",n:"破冰者",d:"使用「破冰計時」開始學習",p:40,f:s=>s.flags.kick},
+ {id:"comeback",c:"啟程",i:"🔄",n:"王者歸來",d:"中斷後重新開始打卡",p:60,f:s=>s.flags.comeback},
+ {id:"s3",c:"連續打卡",i:"🔥",n:"三日不輟",d:"連續打卡 3 天",p:60,f:s=>s.streak.longest>=3},
+ {id:"s7",c:"連續打卡",i:"🔥",n:"一週習慣",d:"連續打卡 7 天",p:120,f:s=>s.streak.longest>=7},
+ {id:"s14",c:"連續打卡",i:"🔥",n:"雙週堅持",d:"連續打卡 14 天",p:220,f:s=>s.streak.longest>=14},
+ {id:"s30",c:"連續打卡",i:"🏆",n:"月度傳奇",d:"連續打卡 30 天",p:500,f:s=>s.streak.longest>=30},
+ {id:"s100",c:"連續打卡",i:"👑",n:"百日築基",d:"連續打卡 100 天",p:2000,f:s=>s.streak.longest>=100},
+ {id:"f1",c:"專注時數",i:"⏱",n:"暖身完成",d:"累積專注 1 小時",p:50,f:s=>HOURS()>=1},
+ {id:"f10",c:"專注時數",i:"⏳",n:"漸入佳境",d:"累積專注 10 小時",p:200,f:s=>HOURS()>=10},
+ {id:"f50",c:"專注時數",i:"🌌",n:"學海老手",d:"累積專注 50 小時",p:800,f:s=>HOURS()>=50},
+ {id:"f100",c:"專注時數",i:"💫",n:"百時宗師",d:"累積專注 100 小時",p:1800,f:s=>HOURS()>=100},
+ {id:"p1",c:"番茄鐘",i:"🍅",n:"第一顆番茄",d:"完成 1 顆番茄鐘",p:30,f:s=>s.stats.pomos>=1},
+ {id:"p10",c:"番茄鐘",i:"🍅",n:"番茄收成",d:"完成 10 顆番茄鐘",p:120,f:s=>s.stats.pomos>=10},
+ {id:"p50",c:"番茄鐘",i:"🧺",n:"番茄農場",d:"完成 50 顆番茄鐘",p:600,f:s=>s.stats.pomos>=50},
+ {id:"i1",c:"資料匯入",i:"📥",n:"首次匯入",d:"匯入第一份資料",p:20,f:s=>s.stats.imports>=1},
+ {id:"i10",c:"資料匯入",i:"🗂",n:"資料收藏家",d:"匯入 10 份資料",p:150,f:s=>s.stats.imports>=10},
+ {id:"i30",c:"資料匯入",i:"🏛",n:"知識館長",d:"匯入 30 份資料",p:400,f:s=>s.stats.imports>=30},
+ {id:"pt500",c:"點數里程碑",i:"◆",n:"點數新星",d:"累積賺得 500 點",p:0,f:s=>s.lifetime>=500},
+ {id:"pt2000",c:"點數里程碑",i:"💠",n:"點數黑洞",d:"累積賺得 2000 點",p:0,f:s=>s.lifetime>=2000},
+ {id:"lv5",c:"等級",i:"⬆️",n:"第五級",d:"達到等級 5",p:0,f:s=>levelInfo(s.lifetime).lvl>=5},
+ {id:"lv10",c:"等級",i:"🌟",n:"第十級",d:"達到等級 10",p:0,f:s=>levelInfo(s.lifetime).lvl>=10},
+ {id:"early",c:"特殊時段",i:"🌅",n:"晨型學者",d:"清晨 6 點前開始學習",p:80,f:s=>s.flags.early},
+ {id:"night",c:"特殊時段",i:"🌙",n:"深夜燃料",d:"凌晨 0–4 點仍在學習",p:80,f:s=>s.flags.night},
+ {id:"weekend",c:"特殊時段",i:"🛡",n:"週末戰士",d:"在週末完成學習",p:60,f:s=>s.flags.weekend},
+ {id:"sub3",c:"廣度",i:"🧩",n:"跨域學習",d:"建立 3 個分類",p:100,f:s=>s.subjects.length>=3},
+ {id:"sub5",c:"廣度",i:"🌐",n:"博學者",d:"建立 5 個分類",p:250,f:s=>s.subjects.length>=5},
+ {id:"r1",c:"外觀收藏",i:"🎨",n:"初次點綴",d:"解鎖第一個主題或裝飾",p:0,f:s=>s.stats.redeems>=1},
+ {id:"r5",c:"外觀收藏",i:"🖼",n:"風格玩家",d:"解鎖 5 種主題或裝飾",p:0,f:s=>s.stats.redeems>=5},
+ {id:"r10",c:"外觀收藏",i:"🏛",n:"收藏家",d:"解鎖 10 種主題或裝飾",p:0,f:s=>s.stats.redeems>=10},
+ {id:"rallt",c:"外觀收藏",i:"🌈",n:"集主題之大成",d:"解鎖所有主題",p:300,f:s=>s.shop&&s.shop.ownedThemes&&s.shop.ownedThemes.length>=THEMES.length},
+ {id:"lr1",c:"懂得犒賞",i:"🎁",n:"第一份犒賞",d:"兌換第一個生活獎勵",p:0,f:s=>(s.stats.lifeRedeems||0)>=1},
+ {id:"lr5",c:"懂得犒賞",i:"🍪",n:"勞逸平衡",d:"累計兌換 5 個生活獎勵",p:0,f:s=>(s.stats.lifeRedeems||0)>=5},
+ {id:"lr20",c:"懂得犒賞",i:"🥳",n:"獎勵大師",d:"累計兌換 20 個生活獎勵",p:0,f:s=>(s.stats.lifeRedeems||0)>=20},
+ {id:"day60",c:"專注里程碑",i:"⌛",n:"專注一甲子",d:"單日累積專注 60 分鐘",p:60,f:s=>Object.values(s.days||{}).some(v=>v>=3600)},
+ {id:"day120",c:"專注里程碑",i:"🎯",n:"超長待機",d:"單日累積專注 120 分鐘",p:120,f:s=>Object.values(s.days||{}).some(v=>v>=7200)},
+ {id:"sess50",c:"專注里程碑",i:"🧱",n:"五十次起跑",d:"累計完成 50 次專注",p:200,f:s=>s.stats.sessions>=50},
+ {id:"sess200",c:"專注里程碑",i:"🏗",n:"習慣已成自然",d:"累計完成 200 次專注",p:700,f:s=>s.stats.sessions>=200},
+ {id:"lv15",c:"等級",i:"🔱",n:"第十五級",d:"達到等級 15",p:0,f:s=>levelInfo(s.lifetime).lvl>=15},
+ {id:"lv20",c:"等級",i:"♛",n:"第二十級",d:"達到等級 20",p:0,f:s=>levelInfo(s.lifetime).lvl>=20},
+ {id:"pt5000",c:"點數里程碑",i:"💎",n:"點數富翁",d:"累積賺得 5000 點",p:0,f:s=>s.lifetime>=5000},
+ {id:"pt10000",c:"點數里程碑",i:"🏦",n:"點數帝國",d:"累積賺得 10000 點",p:0,f:s=>s.lifetime>=10000},
+ {id:"sub8",c:"廣度",i:"📚",n:"全科發展",d:"建立 8 個分類",p:400,f:s=>s.subjects.length>=8},
+ {id:"allday",c:"時段大滿貫",i:"🕛",n:"全天候學者",d:"同時達成晨型、深夜、週末三種時段",p:300,f:s=>s.flags.early&&s.flags.night&&s.flags.weekend},
+];
+
+/* ===================== POINTS / PROGRESSION ===================== */
+function addPoints(n){ if(n<=0)return; const before=levelInfo(state.lifetime).lvl; state.points+=n; state.lifetime+=n; const after=levelInfo(state.lifetime).lvl; if(after>before){toast("🆙","升級！","你已晉升為 "+titleOf(after)+"（LV "+after+"）","ach-toast");} }
+function checkAch(){ let changed=true; while(changed){ changed=false; for(const a of ACHS){ if(!state.unlocked[a.id] && a.f(state)){ state.unlocked[a.id]=Date.now(); addPoints(a.p); toast(a.i,"成就解鎖：" + a.n,a.d+(a.p?(" · +"+a.p+" 點"):""),"ach-toast"); changed=true; } } } }
+
+/* ===================== STREAK / FOCUS ===================== */
+function daysBetween(s1,s2){
+  // s1,s2: "YYYY-M-D" strings — parse as local calendar dates, no timezone issues
+  const p=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d).getTime();};
+  return Math.round((p(s2)-p(s1))/86400000);
+}
+function markStudied(){
+  const t=todayStr();
+  if(state.streak.lastDate===t)return;
+  if(state.streak.lastDate&&daysBetween(state.streak.lastDate,t)===1){
+    state.streak.count++;
+  } else {
+    if(state.streak.count>0||state.streak.lastDate)state.flags.comeback=true;
+    state.streak.count=1;
+  }
+  state.streak.lastDate=t;
+  state.streak.longest=Math.max(state.streak.longest,state.streak.count);
+  addPoints(20);
+}
+function onFocusDone(sec,opt){
+  opt=opt||{};
+  state.stats.focusSec+=sec;
+  state.stats.sessions++;
+  state.days[todayStr()]=(state.days[todayStr()]||0)+sec;
+  const now=new Date(),h=now.getHours(),day=now.getDay();
+  if(h<6)state.flags.early=true;
+  if(h>=0&&h<4)state.flags.night=true;
+  if(day===0||day===6)state.flags.weekend=true;
+  if(opt.kick){state.flags.kick=true;addPoints(Math.max(10,Math.round(sec/60)*2));}
+  else if(opt.pomo){state.stats.pomos++;addPoints(50);}
+  else addPoints(Math.round(sec/60)*2);
+  markStudied();
+  checkAch(); save(); renderAll();
+  toast("✅","專注完成","+"+(opt.kick?Math.max(10,Math.round(sec/60)*2):opt.pomo?50:Math.round(sec/60)*2)+" 點，已記錄今日學習");
+}
+
+/* ===================== TOAST ===================== */
+function toast(icon,t,sub,cls){
+  const el=document.createElement("div");el.className="toast "+(cls||"");
+  el.innerHTML='<div class="ti">'+icon+'</div><div class="tt"><b>'+esc(t)+'</b><span>'+esc(sub||"")+'</span></div>';
+  document.getElementById("toasts").appendChild(el);
+  setTimeout(()=>{el.style.transition=".4s";el.style.opacity="0";el.style.transform="translateX(120%)";setTimeout(()=>el.remove(),400);},4200);
+}
+
+/* ===================== TIMER ===================== */
+/* ---- Timer: 以絕對時間戳為基準，不依賴 tick 次數，後台節流不影響準確度 ----
+   tLeft     = 目前剩餘（倒數）或已過（正數）秒數，純粹用來「顯示」與「繼續」
+   tStartTs  = 最近一次 resume 的 performance.now()（毫秒）
+   tBaseLeft = resume 當下的 tLeft 快照，用來計算 now = tBaseLeft ∓ elapsed
+*/
+let tMin=25, tLeft=25*60, tInt=null, tRunning=false;
+let tKick=false, tCountUp=false, tResetTid=null;
+let tSegBaseLeft=0,   // segStart 時的 tLeft（用於計算本段 elapsed）
+    tSegStartTs=0,    // segStart 的時間戳
+    tBaseLeft=0,      // resume 時的 tLeft 快照
+    tStartTs=0,       // resume 的時間戳
+    tPomoInterrupted=false;
+
+function fmt(s){const m=Math.floor(Math.abs(s)/60),x=Math.abs(s)%60;return(m<10?"0":"")+m+":"+(x<10?"0":"")+x;}
+function paintClock(){document.getElementById("clock").textContent=fmt(tLeft);}
+
+/* 從時間戳重新計算 tLeft（每次 tick 呼叫） */
+function syncLeft(){
+  const elapsed=Math.round((performance.now()-tStartTs)/1000);
+  tLeft=tCountUp ? tBaseLeft+elapsed : tBaseLeft-elapsed;
+}
+
+function startTimer(){
+  if(tRunning)return;
+  if(tResetTid){clearTimeout(tResetTid);tResetTid=null;}
+  if(!tCountUp&&tLeft===tMin*60) tPomoInterrupted=false;
+  // 記錄本段起始
+  tSegBaseLeft=tLeft;
+  tSegStartTs=performance.now();
+  // 記錄本次 resume
+  tBaseLeft=tLeft;
+  tStartTs=performance.now();
+  tRunning=true;
+  const clk=document.getElementById("clock");clk.classList.add("run");
+  document.getElementById("tStatus").textContent=tCountUp?"// 計時中…":"// FOCUSING…";
+  document.getElementById("btnStart").textContent="暫停";
+  tInt=setInterval(()=>{
+    syncLeft();
+    paintClock();
+    if(!tCountUp&&tLeft<=0){
+      tLeft=0;paintClock();
+      clearInterval(tInt);tRunning=false;clk.classList.remove("run");
+      document.getElementById("tStatus").textContent="// COMPLETE ✓";
+      document.getElementById("btnStart").textContent="開始專注";
+      // 本段實際經過秒數
+      const segElapsed=Math.round((performance.now()-tSegStartTs)/1000);
+      onFocusDone(segElapsed,{pomo:(!tPomoInterrupted&&tMin>=25)});
+      tPomoInterrupted=false;
+      tResetTid=setTimeout(()=>{tResetTid=null;resetTimer();},3000);
+    }
+  },500); // 每 0.5 秒 tick 一次——節流時仍能在 1 秒內修正誤差
+}
+
+function pauseTimer(){
+  if(!tRunning)return;
+  clearInterval(tInt);tRunning=false;
+  syncLeft(); // 暫停前先同步一次，確保 tLeft 準確
+  if(tLeft<0)tLeft=0;
+  document.getElementById("clock").classList.remove("run");
+  const segElapsed=Math.round((performance.now()-tSegStartTs)/1000);
+  if(tCountUp){
+    document.getElementById("tStatus").textContent="// 已記錄 "+fmt(segElapsed);
+    document.getElementById("btnStart").textContent="開始專注";
+    tCountUp=false;tKick=false;tLeft=0;
+    if(segElapsed>0)onFocusDone(segElapsed,{kick:true});
+    tResetTid=setTimeout(()=>{tResetTid=null;resetTimer();},2000);
+  }else{
+    if(segElapsed>0){onFocusDone(segElapsed,{pomo:false});tPomoInterrupted=true;}
+      document.getElementById("tStatus").textContent="// PAUSED · 已記錄 "+fmt(segElapsed);
+      document.getElementById("btnStart").textContent="繼續";
+  }
+}
+
+function resetTimer(){
+  clearInterval(tInt);tRunning=false;
+  if(tResetTid){clearTimeout(tResetTid);tResetTid=null;}
+  tCountUp=false;tKick=false;tPomoInterrupted=false;tLeft=tMin*60;paintClock();
+  document.getElementById("clock").classList.remove("run");
+  document.getElementById("tStatus").textContent="// READY";
+  document.getElementById("btnStart").textContent="開始專注";
+}
+
+/* visibilitychange：頁面恢復時重新錨定時間戳，補上背景中流逝的時間 */
+document.addEventListener("visibilitychange",()=>{
+  const hidden=document.hidden;
+  document.body.classList.toggle("page-hidden",hidden);
+  if(!hidden){
+    if(tRunning){
+      // 重新錨定：tLeft 已是 syncLeft 前的舊值；現在直接用正確的 elapsed 還原
+      syncLeft();
+      paintClock();
+      // 如果倒數已完成（背景中倒數到 0）
+      if(!tCountUp&&tLeft<=0){
+        tLeft=0;paintClock();
+        clearInterval(tInt);tRunning=false;
+        document.getElementById("clock").classList.remove("run");
+        document.getElementById("tStatus").textContent="// COMPLETE ✓";
+        document.getElementById("btnStart").textContent="開始專注";
+        const segElapsed=Math.round((performance.now()-tSegStartTs)/1000);
+        onFocusDone(segElapsed,{pomo:(!tPomoInterrupted&&tMin>=25)});
+        tPomoInterrupted=false;
+        tResetTid=setTimeout(()=>{tResetTid=null;resetTimer();},3000);
+      }
+    }
+  }
+});
+
+document.getElementById("btnStart").onclick=()=>{tRunning?pauseTimer():startTimer();};
+document.getElementById("btnReset").onclick=()=>resetTimer();
+document.querySelectorAll(".tmode").forEach(m=>m.onclick=()=>{
+  if(tRunning)return; document.querySelectorAll(".tmode").forEach(x=>x.classList.remove("on"));
+  m.classList.add("on"); tMin=+m.dataset.min; tKick=false; resetTimer();
+});
+document.getElementById("btnKick").onclick=()=>{
+  if(tRunning)return;
+  document.querySelectorAll(".tmode").forEach(x=>x.classList.remove("on"));
+  tMin=25;tKick=true;tCountUp=true;tLeft=0;paintClock();
+  tSegBaseLeft=0;tSegStartTs=performance.now();
+  document.getElementById("tStatus").textContent="// 計時中…";
+  switchView("dash"); startTimer();
+  toast("⚡","破冰啟動","計時器正在記錄，按暫停即可存入時數 ⏱");
+};
+
+/* ===================== DATABASE SYSTEM ===================== */
+let dbFilterCat="all", dbFilterType="all", dbSearch="";
+let previewFileId=null;
+
+/* --- file reading (lazy, uses idle callback to avoid blocking main thread) --- */
+function readFileAsync(file){
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    const type=fileType(file.name,file.type);
+    // For images and PDF: read as dataURL; for text: readAsText
+    if(type==="image"){
+      reader.onload=e=>resolve({dataUrl:e.target.result,textContent:null});
+      reader.onerror=reject;
+      reader.readAsDataURL(file);
+    } else if(type==="pdf"){
+      reader.onload=e=>resolve({dataUrl:e.target.result,textContent:null});
+      reader.onerror=reject;
+      reader.readAsDataURL(file);
+    } else if(type==="word"){
+      // store as dataURL so user can download; also try text extraction
+      reader.onload=e=>resolve({dataUrl:e.target.result,textContent:null});
+      reader.onerror=reject;
+      reader.readAsDataURL(file);
+    } else {
+      // text files
+      reader.onload=e=>resolve({dataUrl:null,textContent:e.target.result});
+      reader.onerror=reject;
+      reader.readAsText(file,"UTF-8");
+    }
+  });
+}
+
+async function importFiles(files, catId){
+  const arr=Array.from(files);
+  const progEl=document.getElementById(catId?"catUploadProgress":"dbUploadProgress");
+  const progressItems=[];
+  // show progress bars
+  arr.forEach((f,i)=>{
+    const row=document.createElement("div");row.className="up-progress";
+    row.innerHTML=`<span class="up-name">${esc(f.name)}</span><div class="up-bar"><i id="upb${i}" style="width:0%"></i></div>`;
+    progEl.appendChild(row);progressItems.push(row);
+  });
+  let imported=0;
+  for(let i=0;i<arr.length;i++){
+    const f=arr[i];
+    const bar=document.getElementById("upb"+i);
+    try{
+      if(bar)bar.style.width="30%";
+      const {dataUrl,textContent}=await readFileAsync(f);
+      if(bar)bar.style.width="80%";
+      const entry={
+        id:uid(),
+        name:f.name,
+        customName:"",
+        catId:catId||null,
+        type:fileType(f.name,f.type),
+        size:f.size,
+        dataUrl,
+        textContent,
+        addedAt:Date.now()
+      };
+      state.db.push(entry);
+      state.stats.imports++;
+      addPoints(5);
+      imported++;
+      if(bar)bar.style.width="100%";
+      // yield to browser between files to avoid jank
+      await new Promise(r=>setTimeout(r,0));
+    }catch(e){
+      if(bar){bar.style.background="var(--red)";bar.style.width="100%";}
+      toast("⚠️","匯入失敗",f.name+": "+e.message);
+    }
+  }
+  // cleanup progress bars after short delay
+  setTimeout(()=>{progressItems.forEach(r=>r.remove());},1500);
+  if(imported>0){
+    checkAch();save();renderAll();renderDbView();
+    if(catId)renderCatDbGrid();
+    toast("📥","匯入完成","已加入 "+imported+" 份資料 (+"+imported*5+" 點)");
+  }
+}
+
+/* --- filter / search logic --- */
+function filteredDb(catId){
+  let items=state.db;
+  if(catId!==undefined) items=items.filter(d=>d.catId===catId);
+  else if(dbFilterCat!=="all") items=items.filter(d=>d.catId===dbFilterCat);
+  if(dbFilterType!=="all") items=items.filter(d=>d.type===dbFilterType);
+  const q=(catId!==undefined?document.getElementById("catSearch"):document.getElementById("dbSearch"))?.value?.toLowerCase()||"";
+  if(q) items=items.filter(d=>(d.customName||d.name).toLowerCase().includes(q));
+  return items;
+}
+
+function buildDbGrid(items, container){
+  if(!items.length){
+    container.innerHTML=`<div class="db-empty"><div class="de-icon">🗄</div><div class="de-title">尚無資料</div><div class="de-sub">拖曳或點擊上方區域匯入 PDF、Word、圖片或純文字</div></div>`;
+    return;
+  }
+  container.innerHTML="";
+  // Use DocumentFragment for batch DOM insertion (perf)
+  const frag=document.createDocumentFragment();
+  items.forEach(item=>{
+    const cat=state.subjects.find(s=>s.id===item.catId);
+    const dispName=item.customName||item.name;
+    const card=document.createElement("div");
+    card.className=`panel db-card ft-${item.type}`;
+    card.dataset.id=item.id;
+    card.innerHTML=`<button class="dc-del" data-id="${item.id}" title="刪除">✕</button>
+      <div class="dc-icon">${FT_ICON[item.type]||"📦"}</div>
+      <div class="dc-name" title="${esc(dispName)}">${esc(dispName)}</div>
+      <div class="dc-cat" style="${cat?"color:"+cat.color+";border-color:"+cat.color+"44":""}">${cat?esc(cat.name):"未分類"}</div>
+      <div class="dc-meta">
+        <span>${FT_LABEL[item.type]}</span>
+        <span>${fmtSize(item.size)}</span>
+        <span>${new Date(item.addedAt).toLocaleDateString("zh-TW")}</span>
+      </div>`;
+    // open preview on card click (not delete btn)
+    card.onclick=e=>{if(!e.target.classList.contains("dc-del"))openPreview(item.id);};
+    card.querySelector(".dc-del").onclick=e=>{e.stopPropagation();deleteFile(item.id);};
+    frag.appendChild(card);
+  });
+  container.appendChild(frag);
+}
+
+function renderDbView(){
+  const grid=document.getElementById("dbGrid");
+  if(!grid)return;
+  // rebuild filter chips
+  const filtersEl=document.getElementById("dbFilters");
+  const types=["all",...new Set(state.db.map(d=>d.type))];
+  const cats=state.subjects.filter(s=>state.db.some(d=>d.catId===s.id));
+  let chips=`<span class="filter-chip${dbFilterCat==="all"&&dbFilterType==="all"?" on":""}" data-cat="all" data-type="all">全部</span>`;
+  cats.forEach(c=>{chips+=`<span class="filter-chip${dbFilterCat===c.id?" on":""}" data-cat="${c.id}" style="${dbFilterCat===c.id?"color:"+c.color+";border-color:"+c.color:""}">${esc(c.name)}</span>`;});
+  ["pdf","word","image","text"].forEach(t=>{
+    if(state.db.some(d=>d.type===t))
+      chips+=`<span class="filter-chip${dbFilterType===t?" on":""}" data-type="${t}">${FT_ICON[t]} ${FT_LABEL[t]}</span>`;
+  });
+  filtersEl.innerHTML=chips;
+  filtersEl.querySelectorAll(".filter-chip").forEach(c=>{
+    c.onclick=()=>{
+      if(c.dataset.cat){dbFilterCat=c.dataset.cat;dbFilterType="all";}
+      else if(c.dataset.type){dbFilterType=c.dataset.type;dbFilterCat="all";}
+      renderDbView();
+    };
+  });
+  buildDbGrid(filteredDb(),grid);
+}
+
+function renderCatDbGrid(){
+  const grid=document.getElementById("catDbGrid");if(!grid)return;
+  const q=document.getElementById("catSearch")?.value?.toLowerCase()||"";
+  let items=state.db.filter(d=>d.catId===curSubj);
+  if(q) items=items.filter(d=>(d.customName||d.name).toLowerCase().includes(q));
+  buildDbGrid(items,grid);
+}
+
+/* --- preview --- */
+function openPreview(id){
+  const item=state.db.find(d=>d.id===id);if(!item)return;
+  previewFileId=id;
+  const dispName=item.customName||item.name;
+  document.getElementById("pvIcon").textContent=FT_ICON[item.type];
+  document.getElementById("pvTitle").textContent=dispName;
+  const cat=state.subjects.find(s=>s.id===item.catId);
+  document.getElementById("pvCat").textContent=cat?cat.name:"未分類";
+  const body=document.getElementById("pvBody");
+  body.innerHTML="";
+  if(item.type==="image"&&item.dataUrl){
+    const img=document.createElement("img");img.className="preview-img";img.src=item.dataUrl;body.appendChild(img);
+  } else if(item.type==="pdf"&&item.dataUrl){
+    const iframe=document.createElement("iframe");iframe.className="preview-pdf";iframe.src=item.dataUrl;body.appendChild(iframe);
+  } else if(item.textContent){
+    const pre=document.createElement("pre");pre.className="preview-text";pre.textContent=item.textContent.slice(0,50000)+(item.textContent.length>50000?"\n\n… (內容過長，僅顯示前 50000 字元)":"");body.appendChild(pre);
+  } else if(item.dataUrl){
+    // word or other binary — offer download link
+    const a=document.createElement("a");a.href=item.dataUrl;a.download=item.name;
+    a.className="btn btn-primary";a.textContent="⬇ 下載檔案";a.style.display="inline-flex";
+    body.appendChild(document.createTextNode("此格式無法直接預覽，請下載後開啟。"));
+    body.appendChild(document.createElement("br"));body.appendChild(document.createElement("br"));
+    body.appendChild(a);
+  } else {
+    body.textContent="（無法預覽此檔案）";
+  }
+  document.getElementById("previewOverlay").classList.add("on");
+}
+document.getElementById("pvClose").onclick=()=>document.getElementById("previewOverlay").classList.remove("on");
+document.getElementById("previewOverlay").onclick=e=>{if(e.target===document.getElementById("previewOverlay"))document.getElementById("previewOverlay").classList.remove("on");};
+document.getElementById("pvDelete").onclick=()=>{
+  if(!previewFileId)return;
+  if(confirm("確定要刪除這份資料？"))deleteFile(previewFileId,true);
+};
+document.getElementById("pvRename").onclick=()=>openRename(previewFileId);
+
+function deleteFile(id,closePreview){
+  state.db=state.db.filter(d=>d.id!==id);
+  save();renderAll();renderDbView();
+  if(curSubj)renderCatDbGrid();
+  if(closePreview)document.getElementById("previewOverlay").classList.remove("on");
+  toast("🗑","已刪除","資料已從資料庫移除");
+}
+
+/* --- rename --- */
+let renameTargetId=null;
+function openRename(id){
+  renameTargetId=id;
+  const item=state.db.find(d=>d.id===id);if(!item)return;
+  document.getElementById("renameInput").value=item.customName||item.name;
+  // populate cat select
+  const sel=document.getElementById("renameCatSelect");
+  sel.innerHTML=`<option value="">未分類</option>`;
+  state.subjects.forEach(s=>{sel.innerHTML+=`<option value="${s.id}"${item.catId===s.id?" selected":""}>${esc(s.name)}</option>`;});
+  document.getElementById("renameModal").classList.add("on");
+  setTimeout(()=>document.getElementById("renameInput").focus(),50);
+}
+document.getElementById("saveRename").onclick=()=>{
+  if(!renameTargetId)return;
+  const item=state.db.find(d=>d.id===renameTargetId);if(!item)return;
+  const newName=document.getElementById("renameInput").value.trim();
+  const newCat=document.getElementById("renameCatSelect").value||null;
+  if(newName)item.customName=newName;
+  item.catId=newCat;
+  save();renderAll();renderDbView();if(curSubj)renderCatDbGrid();
+  document.getElementById("renameModal").classList.remove("on");
+  document.getElementById("previewOverlay").classList.remove("on");
+  toast("✏","已更新","名稱與分類已儲存");
+};
+document.getElementById("cancelRename").onclick=()=>document.getElementById("renameModal").classList.remove("on");
+document.getElementById("saveReward").onclick=saveReward;
+document.getElementById("cancelReward").onclick=()=>document.getElementById("rewardModal").classList.remove("on");
+document.getElementById("rewardModal").onclick=e=>{if(e.target===document.getElementById("rewardModal"))document.getElementById("rewardModal").classList.remove("on");};
+document.getElementById("rewardNameIn").addEventListener("keydown",e=>{if(e.key==="Enter")saveReward();});
+document.getElementById("rewardCostIn").addEventListener("keydown",e=>{if(e.key==="Enter")saveReward();});
+
+/* --- search handlers (debounced) --- */
+let dbSearchTid=null;
+document.getElementById("dbSearch").addEventListener("input",()=>{
+  clearTimeout(dbSearchTid);
+  dbSearchTid=setTimeout(()=>renderDbView(),180);
+});
+let catSearchTid=null;
+document.getElementById("catSearch").addEventListener("input",()=>{
+  clearTimeout(catSearchTid);
+  catSearchTid=setTimeout(()=>renderCatDbGrid(),180);
+});
+
+/* --- drop zone wiring --- */
+function wireDropZone(dropEl, inputEl, catId){
+  dropEl.onclick=()=>inputEl.click();
+  dropEl.ondragover=e=>{e.preventDefault();dropEl.classList.add("over");};
+  dropEl.ondragleave=()=>dropEl.classList.remove("over");
+  dropEl.ondrop=e=>{e.preventDefault();dropEl.classList.remove("over");if(e.dataTransfer.files.length)importFiles(e.dataTransfer.files,catId);};
+  inputEl.onchange=e=>{if(e.target.files.length)importFiles(e.target.files,catId);inputEl.value="";};
+}
+wireDropZone(document.getElementById("dbDropGlobal"),document.getElementById("dbFileInput"),null);
+document.getElementById("btnUploadGlobal").onclick=()=>document.getElementById("dbFileInput").click();
+
+/* ===================== SUBJECTS / CATEGORIES ===================== */
+let curSubj=null, pickColor=COLORS[0];
+function getSubj(id){return state.subjects.find(s=>s.id===id);}
+function renderSubjNav(){
+  const nav=document.getElementById("subjNav");nav.innerHTML="";
+  if(!state.subjects.length){nav.innerHTML='<div style="font-size:12px;color:var(--muted2);padding:6px 12px">尚無分類</div>';return;}
+  state.subjects.forEach(s=>{
+    const count=state.db.filter(d=>d.catId===s.id).length;
+    const d=document.createElement("div");d.className="nav-item"+(curSubj===s.id&&curView==="subj"?" active":"");
+    d.innerHTML='<span class="ic" style="color:'+s.color+'">▸</span> '+esc(s.name)+
+      '<span style="font-family:var(--mono);font-size:10px;color:var(--muted2);margin-left:auto">'+count+'</span>';
+    d.onclick=()=>openSubj(s.id);nav.appendChild(d);
+  });
+}
+function openSubj(id){curSubj=id;switchView("subj");renderSubjDetail();}
+function renderSubjDetail(){
+  const s=getSubj(curSubj);if(!s)return;
+  document.getElementById("subjTitle").textContent=s.name;
+  document.getElementById("subjTitle").style.color=s.color;
+  const count=state.db.filter(d=>d.catId===s.id).length;
+  document.getElementById("subjTag").textContent=count+" 份資料";
+  // wire cat drop zone
+  wireDropZone(document.getElementById("catDrop"),document.getElementById("catFileInput"),curSubj);
+  renderCatDbGrid();
+}
+
+/* ===================== RENDER DASHBOARD / ACH ===================== */
+function renderDash(){
+  const li=levelInfo(state.lifetime);
+  document.getElementById("hLvl").textContent=li.lvl;
+  document.getElementById("hPts").textContent=state.points;
+  document.getElementById("hStreak").textContent=state.streak.count;
+  document.getElementById("sToday").innerHTML=Math.round((state.days[todayStr()]||0)/60)+'<small> 分</small>';
+  document.getElementById("sStreak").innerHTML=state.streak.count+'<small> 天</small>';
+  document.getElementById("sPts").textContent=state.points;
+  document.getElementById("sFiles").innerHTML=state.db.length+'<small> 份</small>';
+  document.getElementById("lvlText").textContent="LV "+li.lvl+" · "+li.into+"/"+li.need+" XP";
+  document.getElementById("lvlTitle").textContent=titleOf(li.lvl);
+  document.getElementById("lvlFill").style.width=Math.min(100,li.pct*100)+"%";
+  const h=new Date().getHours();const g=h<5?"夜深了":h<12?"早安":h<18?"午安":"晚安";
+  document.getElementById("greet").textContent=g+"，指揮官";
+  document.getElementById("dateLine").textContent="// "+new Date().toLocaleDateString("zh-TW",{weekday:"long",month:"long",day:"numeric"});
+  // week bars — use requestIdleCallback to not block if user is interacting
+  const bars=document.getElementById("weekBars");bars.innerHTML="";
+  let vals=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);vals.push({k:dStr(d),lbl:["日","一","二","三","四","五","六"][d.getDay()],min:Math.round((state.days[dStr(d)]||0)/60)});}
+  const max=Math.max(30,...vals.map(v=>v.min));
+  const frag=document.createDocumentFragment();
+  vals.forEach((v,idx)=>{
+    const col=document.createElement("div");col.className="bar-col";
+    col.innerHTML='<div class="bar-val">'+(v.min||"")+'</div><div class="bar'+(idx===6?" today":"")+'\" style="height:'+(v.min/max*100)+'%"></div><div class="bar-lbl">'+v.lbl+'</div>';
+    frag.appendChild(col);
+  });
+  bars.appendChild(frag);
+  // recent ach
+  const ra=document.getElementById("recentAch");
+  const arr=Object.entries(state.unlocked).map(([id,t])=>({a:ACHS.find(x=>x.id===id),t})).filter(x=>x.a).sort((a,b)=>b.t-a.t).slice(0,3);
+  ra.innerHTML=arr.length?arr.map(x=>'<div style="display:flex;align-items:center;gap:10px;font-size:13px"><span style="font-size:18px">'+x.a.i+'</span><span>'+x.a.n+'</span></div>').join(""):'<div style="font-size:12px;color:var(--muted2)">完成首次專注即可解鎖第一個成就 ✦</div>';
+}
+
+function renderAch(){
+  const list=document.getElementById("achList");list.innerHTML="";
+  const cats=[...new Set(ACHS.map(a=>a.c))];
+  const frag=document.createDocumentFragment();
+  cats.forEach(c=>{
+    const h=document.createElement("div");h.className="ach-cat";h.textContent="◣ "+c;frag.appendChild(h);
+    const g=document.createElement("div");g.className="grid ach-grid";
+    ACHS.filter(a=>a.c===c).forEach(a=>{
+      const un=!!state.unlocked[a.id];
+      const el=document.createElement("div");el.className="panel ach"+(un?" unlocked":"");
+      el.innerHTML='<div class="ai">'+a.i+'</div><div class="an">'+a.n+'</div><div class="ad">'+a.d+'</div>'+(a.p?'<div class="ap">+'+a.p+' 點</div>':'<div class="ap">里程碑</div>');
+      g.appendChild(el);
+    });
+    frag.appendChild(g);
+  });
+  list.appendChild(frag);
+  const u=Object.keys(state.unlocked).length;
+  document.getElementById("achProg").style.width=(u/ACHS.length*100)+"%";
+  document.getElementById("achProgT").textContent=u+" / "+ACHS.length;
+}
+
+// Lazy render: only re-render visible sections
+function renderAll(){
+  renderDash();
+  renderSubjNav();
+  // defer non-visible renders using idle callback
+  const idle=window.requestIdleCallback||((cb)=>setTimeout(cb,50));
+  if(curView==="ach") renderAch();
+  else idle(()=>renderAch());
+  if(curView==="store") renderStore();
+  else idle(()=>renderStore());
+  if(curView==="db") renderDbView();
+  if(curView==="subj"&&curSubj) renderSubjNav();
+}
+
+/* ===================== STORE ===================== */
+const THEMES=[
+ // ===== tech =====
+ {id:"default",name:"霓虹青",icon:"🩵",cost:0,series:"tech",bg:"#05070f",bg2:"#070b18",c1:"#22d3ee",c2:"#a855f7",c3:"#e84ad8",o1:"rgba(168,85,247,.16)",o2:"rgba(34,211,238,.14)"},
+ {id:"bloodmoon",name:"血月",icon:"🔴",cost:800,series:"tech",bg:"#0f0203",bg2:"#160305",c1:"#ff3344",c2:"#cc0011",c3:"#ff9966",o1:"rgba(204,0,17,.22)",o2:"rgba(255,51,68,.14)"},
+ {id:"abyss",name:"深淵藍",icon:"🌊",cost:1000,series:"tech",bg:"#01040e",bg2:"#010816",c1:"#3b82f6",c2:"#0055cc",c3:"#38bdf8",o1:"rgba(59,130,246,.2)",o2:"rgba(0,85,204,.16)"},
+ {id:"thunder",name:"紫電",icon:"⚡",cost:1500,series:"tech",bg:"#06020e",bg2:"#090214",c1:"#c026d3",c2:"#7c3aed",c3:"#f472b6",o1:"rgba(192,38,211,.22)",o2:"rgba(124,58,237,.18)"},
+ {id:"ghost",name:"極簡鉻",icon:"🤍",cost:2500,series:"tech",bg:"#060708",bg2:"#080a0b",c1:"#cbd5e1",c2:"#64748b",c3:"#94a3b8",o1:"rgba(100,116,139,.14)",o2:"rgba(203,213,225,.08)"},
+ // ===== terminal =====
+ {id:"matrix",name:"駭客終端",icon:"🖥️",cost:1200,series:"terminal",sty:"terminal",bg:"#000a02",bg2:"#001505",c1:"#33ff66",c2:"#19b33f",c3:"#aaffbb",o1:"rgba(51,255,102,.12)",o2:"rgba(25,179,63,.14)",txt:"#c8ffd4",muted:"#5fbf72",muted2:"#3d8a4d",line:"rgba(51,255,102,.28)",grid:"rgba(51,255,102,.12)",display:"'Space Mono',monospace",body:"'Space Mono','Noto Sans TC',monospace",mono:"'Space Mono',monospace"},
+ {id:"amber_term",name:"琥珀終端",icon:"📺",cost:1200,series:"terminal",sty:"terminal",bg:"#0c0600",bg2:"#160c00",c1:"#ffb000",c2:"#cc7700",c3:"#ffd480",o1:"rgba(255,176,0,.14)",o2:"rgba(204,119,0,.14)",txt:"#ffd9a0",muted:"#c79550",muted2:"#8f6a33",line:"rgba(255,176,0,.26)",grid:"rgba(255,176,0,.10)",display:"'Space Mono',monospace",body:"'Space Mono','Noto Sans TC',monospace",mono:"'Space Mono',monospace"},
+ {id:"ibm_term",name:"冰藍終端",icon:"❄️",cost:1500,series:"terminal",sty:"terminal",bg:"#001018",bg2:"#001b28",c1:"#5fd7ff",c2:"#2b9fd6",c3:"#bdeeff",o1:"rgba(95,215,255,.14)",o2:"rgba(43,159,214,.14)",txt:"#cdeeff",muted:"#6fb3cc",muted2:"#477e96",line:"rgba(95,215,255,.26)",grid:"rgba(95,215,255,.10)",display:"'Space Mono',monospace",body:"'Space Mono','Noto Sans TC',monospace",mono:"'Space Mono',monospace"},
+ {id:"alert_term",name:"警報終端",icon:"🚨",cost:1500,series:"terminal",sty:"terminal",bg:"#100002",bg2:"#1a0205",c1:"#ff5a5a",c2:"#b30000",c3:"#ff9e9e",o1:"rgba(255,90,90,.16)",o2:"rgba(179,0,0,.16)",txt:"#ffd0d0",muted:"#cc7d7d",muted2:"#945050",line:"rgba(255,90,90,.28)",grid:"rgba(255,90,90,.10)",display:"'Space Mono',monospace",body:"'Space Mono','Noto Sans TC',monospace",mono:"'Space Mono',monospace"},
+ // ===== retro =====
+ {id:"gameboy",name:"掌機綠",icon:"🎮",cost:1500,series:"retro",sty:"retro",bg:"#0f1f0a",bg2:"#16300f",c1:"#9bbc0f",c2:"#306230",c3:"#cadc9f",o1:"rgba(155,188,15,.16)",o2:"rgba(48,98,48,.18)",txt:"#dce8c0",muted:"#8aa05a",muted2:"#5f7a3a",line:"rgba(155,188,15,.3)",grid:"rgba(155,188,15,.12)",display:"'Space Mono',monospace",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"arcade",name:"街機霓虹",icon:"👾",cost:1800,series:"retro",sty:"retro",bg:"#0a0218",bg2:"#120428",c1:"#ff4dd2",c2:"#00e5ff",c3:"#ffe34d",o1:"rgba(255,77,210,.2)",o2:"rgba(0,229,255,.16)",txt:"#f3e8ff",muted:"#b58fd6",muted2:"#7d5fa0",line:"rgba(255,77,210,.32)",grid:"rgba(0,229,255,.12)",display:"'Space Mono',monospace",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"famicom",name:"紅白機",icon:"🕹️",cost:1800,series:"retro",sty:"retro",bg:"#1a0606",bg2:"#260a0a",c1:"#e83b3b",c2:"#f0d000",c3:"#f5f0e0",o1:"rgba(232,59,59,.2)",o2:"rgba(240,208,0,.14)",txt:"#f3e6d8",muted:"#c79a8a",muted2:"#946a5a",line:"rgba(232,59,59,.3)",grid:"rgba(240,208,0,.10)",display:"'Space Mono',monospace",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"vapor",name:"蒸氣波",icon:"🌴",cost:2000,series:"retro",sty:"retro",bg:"#1a0a2e",bg2:"#2a0e40",c1:"#ff71ce",c2:"#01cdfe",c3:"#fffb96",o1:"rgba(255,113,206,.22)",o2:"rgba(1,205,254,.18)",txt:"#ffe6fb",muted:"#c79fd6",muted2:"#8f6fa0",line:"rgba(255,113,206,.3)",grid:"rgba(1,205,254,.12)",display:"'Space Mono',monospace",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ // ===== paper =====
+ {id:"journal",name:"奶油手帳",icon:"📔",cost:600,series:"paper",light:true,sty:"paper",bg:"#f7f1e3",bg2:"#efe6d0",c1:"#d98c5f",c2:"#7d9b6a",c3:"#e0a3a3",o1:"rgba(217,140,95,.14)",o2:"rgba(125,155,106,.12)",txt:"#4a3f35",muted:"#8a7a68",muted2:"#b3a591",panel:"rgba(255,252,245,.86)",panelSolid:"#fffaf0",line:"rgba(120,100,75,.3)",grid:"rgba(150,120,90,.10)",display:"'Klee One','Noto Sans TC',serif",body:"'Klee One','Noto Sans TC',serif",mono:"'Klee One',monospace"},
+ {id:"kraft",name:"牛皮紙手作",icon:"📦",cost:900,series:"paper",light:true,sty:"paper",bg:"#d8c7a8",bg2:"#ccb893",c1:"#9c4f28",c2:"#5d6b38",c3:"#b87333",o1:"rgba(156,79,40,.16)",o2:"rgba(93,107,56,.14)",txt:"#3d2f1e",muted:"#6e5c40",muted2:"#917c5a",panel:"rgba(232,221,197,.9)",panelSolid:"#e8ddc5",line:"rgba(90,65,35,.36)",grid:"rgba(110,80,50,.12)",display:"'Yusei Magic','Noto Sans TC',sans-serif",body:"'Yusei Magic','Noto Sans TC',sans-serif",mono:"'Yusei Magic',monospace"},
+ {id:"gridpaper",name:"方格筆記",icon:"📐",cost:1000,series:"paper",light:true,sty:"paper",bg:"#eef4f7",bg2:"#e3edf2",c1:"#4a8db0",c2:"#6aa67d",c3:"#e08a6a",o1:"rgba(74,141,176,.12)",o2:"rgba(106,166,125,.10)",txt:"#34434a",muted:"#637a83",muted2:"#94a8b0",panel:"rgba(250,253,255,.88)",panelSolid:"#fafdff",line:"rgba(70,120,150,.3)",grid:"rgba(80,140,175,.16)",display:"'Klee One','Noto Sans TC',serif",body:"'Klee One','Noto Sans TC',serif",mono:"'Klee One',monospace"},
+ {id:"memo",name:"便利貼黃",icon:"🗒️",cost:1000,series:"paper",light:true,sty:"paper",bg:"#fdf6c8",bg2:"#f8edab",c1:"#c99a1e",c2:"#7d9b3a",c3:"#e07a4a",o1:"rgba(201,154,30,.16)",o2:"rgba(125,155,58,.12)",txt:"#4a3f18",muted:"#8a7a3a",muted2:"#b3a35f",panel:"rgba(255,250,205,.9)",panelSolid:"#fffbcf",line:"rgba(150,120,30,.3)",grid:"rgba(170,140,40,.1)",display:"'Yusei Magic','Noto Sans TC',sans-serif",body:"'Yusei Magic','Noto Sans TC',sans-serif",mono:"'Yusei Magic',monospace"},
+ // ===== soft =====
+ {id:"sakura",name:"櫻花棉花糖",icon:"🌸",cost:900,series:"soft",light:true,sty:"soft",bg:"#fdeef3",bg2:"#fce0ec",c1:"#f06a9b",c2:"#c98bd6",c3:"#ffb3d1",o1:"rgba(240,106,155,.16)",o2:"rgba(201,139,214,.14)",txt:"#6b3a4d",muted:"#b07a92",muted2:"#d4a8bd",panel:"rgba(255,250,252,.9)",panelSolid:"#fffafc",line:"rgba(200,120,160,.18)",grid:"rgba(220,140,180,.08)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"sky",name:"晴空薄荷",icon:"🌤️",cost:1200,series:"soft",light:true,sty:"soft",bg:"#e8f6fb",bg2:"#dcf0f7",c1:"#3bb6d9",c2:"#5ec9a0",c3:"#9ad9e8",o1:"rgba(59,182,217,.16)",o2:"rgba(94,201,160,.14)",txt:"#2e4a52",muted:"#5f8893",muted2:"#94b6bf",panel:"rgba(252,254,255,.9)",panelSolid:"#fcffff",line:"rgba(60,150,180,.18)",grid:"rgba(90,180,210,.08)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"lavender",name:"薰衣草奶霜",icon:"💜",cost:1200,series:"soft",light:true,sty:"soft",bg:"#f1ecfb",bg2:"#e8e0f7",c1:"#9b7ede",c2:"#b79ae8",c3:"#d6c4f5",o1:"rgba(155,126,222,.16)",o2:"rgba(183,154,232,.12)",txt:"#473a5e",muted:"#8475a0",muted2:"#ada0c4",panel:"rgba(253,251,255,.9)",panelSolid:"#fdfbff",line:"rgba(140,110,200,.18)",grid:"rgba(160,130,210,.08)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"peach",name:"蜜桃優格",icon:"🍑",cost:1400,series:"soft",light:true,sty:"soft",bg:"#fff0ea",bg2:"#ffe4d8",c1:"#ff8c69",c2:"#ffb38a",c3:"#ffd0b0",o1:"rgba(255,140,105,.16)",o2:"rgba(255,179,138,.12)",txt:"#5e3a2c",muted:"#a87a66",muted2:"#cca390",panel:"rgba(255,251,249,.9)",panelSolid:"#fffbf9",line:"rgba(220,130,90,.18)",grid:"rgba(240,150,110,.08)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ // ===== editorial =====
+ {id:"mono",name:"黑白雜誌",icon:"📰",cost:1500,series:"editorial",light:true,sty:"brutal",bg:"#f4f4f0",bg2:"#eaeae4",c1:"#111111",c2:"#444444",c3:"#e63946",o1:"rgba(0,0,0,.05)",o2:"rgba(230,57,70,.06)",txt:"#111111",muted:"#555555",muted2:"#888888",panel:"rgba(255,255,255,.96)",panelSolid:"#ffffff",line:"rgba(0,0,0,.9)",grid:"rgba(0,0,0,.05)",display:"'Chakra Petch',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"blueprint",name:"工程藍圖",icon:"📐",cost:1800,series:"editorial",sty:"brutal",bg:"#0a2540",bg2:"#0d2e4d",c1:"#7fd4ff",c2:"#4a90c2",c3:"#ffffff",o1:"rgba(127,212,255,.14)",o2:"rgba(74,144,194,.16)",txt:"#dceeff",muted:"#8fb8d6",muted2:"#5f87a3",line:"rgba(180,220,255,.6)",grid:"rgba(150,200,240,.18)",display:"'Space Mono',monospace",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"bauhaus",name:"包浩斯",icon:"🔺",cost:1800,series:"editorial",light:true,sty:"brutal",bg:"#f3efe6",bg2:"#ebe5d6",c1:"#d62828",c2:"#1d3557",c3:"#f4a300",o1:"rgba(214,40,40,.08)",o2:"rgba(29,53,87,.08)",txt:"#1a1a1a",muted:"#555044",muted2:"#888173",panel:"rgba(255,254,250,.96)",panelSolid:"#fffef8",line:"rgba(20,20,20,.85)",grid:"rgba(0,0,0,.05)",display:"'Chakra Petch',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"riso",name:"Riso 印刷",icon:"🖨️",cost:2000,series:"editorial",light:true,sty:"brutal",bg:"#faf3ef",bg2:"#f3e8e0",c1:"#ff4f7b",c2:"#3d5af1",c3:"#22a699",o1:"rgba(255,79,123,.1)",o2:"rgba(61,90,241,.08)",txt:"#2b2733",muted:"#6a6478",muted2:"#9c97a8",panel:"rgba(255,252,250,.96)",panelSolid:"#fffcfa",line:"rgba(40,30,50,.8)",grid:"rgba(0,0,0,.05)",display:"'Chakra Petch',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ // ===== nature =====
+ {id:"forest",name:"晨霧森林",icon:"🌲",cost:1000,series:"nature",light:true,sty:"nature",bg:"#eef3ea",bg2:"#e2ebdc",c1:"#3f7d52",c2:"#6b9a5f",c3:"#a8c49a",o1:"rgba(63,125,82,.14)",o2:"rgba(107,154,95,.12)",txt:"#2b3a2e",muted:"#5f7560",muted2:"#90a48f",panel:"rgba(250,253,247,.9)",panelSolid:"#fafdf7",line:"rgba(70,110,70,.22)",grid:"rgba(80,120,80,.10)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"ocean",name:"深海珊瑚",icon:"🪸",cost:1400,series:"nature",sty:"nature",bg:"#04212e",bg2:"#062c3d",c1:"#2fd6c4",c2:"#1f8fa8",c3:"#ff9e7d",o1:"rgba(47,214,196,.16)",o2:"rgba(31,143,168,.16)",txt:"#d6f5f0",muted:"#7cb8b5",muted2:"#4f8a88",line:"rgba(47,214,196,.24)",grid:"rgba(47,214,196,.10)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"maple",name:"楓紅秋日",icon:"🍁",cost:1400,series:"nature",light:true,sty:"nature",bg:"#f7ede4",bg2:"#f0e0d0",c1:"#c0532b",c2:"#9a6a2f",c3:"#e0903f",o1:"rgba(192,83,43,.16)",o2:"rgba(154,106,47,.12)",txt:"#4a2f22",muted:"#8a6450",muted2:"#b39080",panel:"rgba(255,249,243,.9)",panelSolid:"#fff9f3",line:"rgba(150,80,40,.24)",grid:"rgba(170,100,50,.1)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"desert",name:"沙丘黃昏",icon:"🏜️",cost:1600,series:"nature",sty:"nature",bg:"#241405",bg2:"#321c08",c1:"#e8a44c",c2:"#c06a3a",c3:"#f5d28a",o1:"rgba(232,164,76,.18)",o2:"rgba(192,106,58,.16)",txt:"#f5e4c8",muted:"#c4a578",muted2:"#8f7850",line:"rgba(232,164,76,.24)",grid:"rgba(232,164,76,.1)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ // ===== vintage =====
+ {id:"sepia",name:"懷舊書頁",icon:"📜",cost:1000,series:"vintage",light:true,sty:"vintage",bg:"#efe6d2",bg2:"#e6dabf",c1:"#8a5a2b",c2:"#6b4423",c3:"#b08442",o1:"rgba(138,90,43,.14)",o2:"rgba(107,68,35,.12)",txt:"#43321d",muted:"#7a6346",muted2:"#a08a68",panel:"rgba(247,240,225,.9)",panelSolid:"#f7f0e1",line:"rgba(120,85,45,.3)",grid:"rgba(130,95,55,.10)",display:"'Klee One','Noto Sans TC',serif",body:"'Klee One','Noto Sans TC',serif",mono:"'Klee One',serif"},
+ {id:"diner",name:"美式餐館",icon:"🎷",cost:1500,series:"vintage",sty:"vintage",bg:"#16100a",bg2:"#1f160d",c1:"#e8b04b",c2:"#c0392b",c3:"#2a9d8f",o1:"rgba(232,176,75,.16)",o2:"rgba(192,57,43,.16)",txt:"#f3e4c4",muted:"#bfa478",muted2:"#8a7450",line:"rgba(232,176,75,.26)",grid:"rgba(232,176,75,.10)",display:"'Klee One','Noto Sans TC',serif",body:"'Noto Sans TC',sans-serif",mono:"'Klee One',serif"},
+ {id:"vinyl",name:"黑膠酒紅",icon:"🎵",cost:1600,series:"vintage",sty:"vintage",bg:"#1a0a0e",bg2:"#260e14",c1:"#d4a843",c2:"#8c2d3a",c3:"#e0c080",o1:"rgba(212,168,67,.16)",o2:"rgba(140,45,58,.18)",txt:"#ecd9c0",muted:"#bb9c7a",muted2:"#8a6e52",line:"rgba(212,168,67,.26)",grid:"rgba(212,168,67,.1)",display:"'Klee One','Noto Sans TC',serif",body:"'Noto Sans TC',sans-serif",mono:"'Klee One',serif"},
+ {id:"photo",name:"老照片墨綠",icon:"📷",cost:1600,series:"vintage",light:true,sty:"vintage",bg:"#e8e6d8",bg2:"#dcdac8",c1:"#5c6b4a",c2:"#3d4a30",c3:"#a89968",o1:"rgba(92,107,74,.14)",o2:"rgba(61,74,48,.12)",txt:"#34382a",muted:"#6a6e58",muted2:"#969a80",panel:"rgba(244,243,235,.9)",panelSolid:"#f4f3eb",line:"rgba(80,90,60,.3)",grid:"rgba(90,100,70,.1)",display:"'Klee One','Noto Sans TC',serif",body:"'Klee One','Noto Sans TC',serif",mono:"'Klee One',serif"},
+ // ===== cosmic =====
+ {id:"galaxy",name:"星雲銀河",icon:"🌌",cost:1600,series:"cosmic",sty:"cosmic",bg:"#0a0420",bg2:"#120833",c1:"#a78bfa",c2:"#22d3ee",c3:"#f472b6",o1:"rgba(167,139,250,.2)",o2:"rgba(34,211,238,.16)",txt:"#ece8ff",muted:"#a99fcf",muted2:"#766f9e",line:"rgba(167,139,250,.28)",grid:"rgba(167,139,250,.10)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"aurora",name:"極光夜空",icon:"🌠",cost:2000,series:"cosmic",sty:"cosmic",bg:"#021410",bg2:"#04231c",c1:"#34f5a0",c2:"#22d3ee",c3:"#c084fc",o1:"rgba(52,245,160,.18)",o2:"rgba(34,211,238,.16)",txt:"#dffff2",muted:"#82c4ae",muted2:"#4f8a78",line:"rgba(52,245,160,.24)",grid:"rgba(52,245,160,.10)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"saturn",name:"土星金環",icon:"🪐",cost:1800,series:"cosmic",sty:"cosmic",bg:"#160e02",bg2:"#221504",c1:"#f0c060",c2:"#d98a3a",c3:"#a8d0f0",o1:"rgba(240,192,96,.18)",o2:"rgba(217,138,58,.16)",txt:"#f5e8cc",muted:"#c4ad82",muted2:"#8f7c52",line:"rgba(240,192,96,.24)",grid:"rgba(240,192,96,.1)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ {id:"blackhole",name:"黑洞洋紅",icon:"🕳️",cost:2200,series:"cosmic",sty:"cosmic",bg:"#0a0010",bg2:"#14021c",c1:"#ff2d95",c2:"#7c3aed",c3:"#ffae00",o1:"rgba(255,45,149,.2)",o2:"rgba(124,58,237,.18)",txt:"#ffe0f0",muted:"#c78fb0",muted2:"#8f5f7a",line:"rgba(255,45,149,.28)",grid:"rgba(255,45,149,.1)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Zen Maru Gothic','Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"},
+ // ===== nordic =====
+ {id:"nordic_blue",name:"峽灣靛藍",icon:"🇸🇪",cost:1200,series:"nordic",light:true,sty:"nordic",bg:"#eef2f5",bg2:"#e3e9ee",c1:"#3a6ea5",c2:"#5b8db8",c3:"#e6a23c",o1:"rgba(58,110,165,.1)",o2:"rgba(91,141,184,.08)",txt:"#2a3845",muted:"#5e7180",muted2:"#93a3b0",panel:"rgba(255,255,255,.94)",panelSolid:"#ffffff",line:"rgba(58,110,165,.3)",grid:"rgba(58,110,165,.06)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"oat",name:"燕麥米白",icon:"🌾",cost:1300,series:"nordic",light:true,sty:"nordic",bg:"#f5f1e8",bg2:"#ece5d6",c1:"#b08d57",c2:"#8a9a5b",c3:"#c97b5a",o1:"rgba(176,141,87,.1)",o2:"rgba(138,154,91,.08)",txt:"#403828",muted:"#857a64",muted2:"#b0a690",panel:"rgba(253,251,245,.94)",panelSolid:"#fdfbf5",line:"rgba(150,120,75,.28)",grid:"rgba(150,120,75,.06)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"sage",name:"鼠尾草綠",icon:"🪴",cost:1300,series:"nordic",light:true,sty:"nordic",bg:"#eef2ec",bg2:"#e2e8de",c1:"#6f8f6a",c2:"#8aa580",c3:"#cba36a",o1:"rgba(111,143,106,.1)",o2:"rgba(138,165,128,.08)",txt:"#33402f",muted:"#647560",muted2:"#98a892",panel:"rgba(253,255,251,.94)",panelSolid:"#fdfffb",line:"rgba(90,120,85,.28)",grid:"rgba(90,120,85,.06)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+ {id:"ink",name:"墨水藍夜",icon:"🖋️",cost:1600,series:"nordic",sty:"nordic",bg:"#161b22",bg2:"#1c232c",c1:"#79c0ff",c2:"#a5d6ff",c3:"#e3b341",o1:"rgba(121,192,255,.1)",o2:"rgba(165,214,255,.08)",txt:"#d6dde6",muted:"#8b96a3",muted2:"#5f6b78",panel:"rgba(33,40,49,.9)",panelSolid:"#212830",line:"rgba(121,192,255,.22)",grid:"rgba(121,192,255,.06)",display:"'Zen Maru Gothic','Noto Sans TC',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Zen Maru Gothic',monospace"},
+];
+const DEFAULT_REWARDS=[
+ {id:"lr_boba",name:"珍珠奶茶",icon:"🧋",cost:150,desc:"喝一杯珍奶，甜蜜犒賞自己"},
+ {id:"lr_phone",name:"自由滑手機 30 分",icon:"📱",cost:80,desc:"無罪惡感刷 30 分鐘社群"},
+ {id:"lr_drama",name:"追一集劇",icon:"🎬",cost:120,desc:"解鎖放鬆，看一集最愛的劇"},
+ {id:"lr_delivery",name:"點一份外賣",icon:"🍱",cost:200,desc:"好好犒賞今天辛苦的胃"},
+ {id:"lr_nap",name:"補個午覺 20 分",icon:"💤",cost:60,desc:"快速充電，合法偷懶"},
+ {id:"lr_walk",name:"出門散步",icon:"🚶",cost:50,desc:"曬太陽、腦袋放空"},
+ {id:"lr_dessert",name:"吃個甜點",icon:"🍰",cost:180,desc:"蛋糕或冰淇淋，任君選擇"},
+ {id:"lr_stationery",name:"買一樣文具",icon:"🖊️",cost:300,desc:"投資一件讓你更想讀書的工具"},
+ {id:"lr_manga",name:"看一本漫畫",icon:"📚",cost:100,desc:"讀完一本漫畫的正當理由"},
+ {id:"lr_bookstore",name:"逛一趟書店",icon:"🏪",cost:400,desc:"隨意翻書，無消費壓力"},
+ {id:"lr_music",name:"音樂一小時",icon:"🎧",cost:70,desc:"戴上耳機，完全沉浸音樂"},
+ {id:"lr_game",name:"打一局遊戲",icon:"🎮",cost:130,desc:"解鎖無愧疚的一局遊戲時光"},
+];
+function themeById(id){return THEMES.find(t=>t.id===id)||THEMES[0];}
+const DARK_DEFAULTS={txt:"#e8eefb",muted:"#8593b0",muted2:"#5d6b8a",panel:"rgba(16,23,42,.62)",panelSolid:"#101728",line:"rgba(89,128,196,.22)",grid:"rgba(89,128,196,.22)",display:"'Chakra Petch',sans-serif",body:"'Noto Sans TC',sans-serif",mono:"'Space Mono',monospace"};
+function applyTheme(id){
+  const t=themeById(id),r=document.documentElement.style;
+  const d=DARK_DEFAULTS;
+  r.setProperty("--cyan",t.c1);
+  r.setProperty("--cyan-glow",t.c1+"8c");
+  r.setProperty("--line-bright",t.c1+"73");
+  r.setProperty("--violet",t.c2);
+  r.setProperty("--magenta",t.c3);
+  r.setProperty("--orb1",t.o1);
+  r.setProperty("--orb2",t.o2);
+  r.setProperty("--bg",t.bg||"#05070f");
+  r.setProperty("--bg2",t.bg2||"#070b18");
+  // text / panel / fonts (creative & light themes override; otherwise dark defaults)
+  r.setProperty("--txt",t.txt||d.txt);
+  r.setProperty("--muted",t.muted||d.muted);
+  r.setProperty("--muted2",t.muted2||d.muted2);
+  r.setProperty("--panel",t.panel||d.panel);
+  r.setProperty("--panel-solid",t.panelSolid||d.panelSolid);
+  r.setProperty("--line",t.line||d.line);
+  r.setProperty("--display",t.display||d.display);
+  r.setProperty("--body",t.body||d.body);
+  r.setProperty("--mono",t.mono||d.mono);
+  document.documentElement.style.setProperty("--gridc",t.grid||t.line||d.grid);
+  document.body.classList.toggle("light-theme",!!t.light);
+  // structural style family
+  ["sty-paper","sty-soft","sty-retro","sty-brutal","sty-terminal","sty-nature","sty-vintage","sty-cosmic","sty-nordic"].forEach(c=>document.body.classList.remove(c));
+  if(t.sty)document.body.classList.add("sty-"+t.sty);
+  document.getElementById("bg").style.background=
+    "radial-gradient(1200px 600px at 80% -10%,"+t.o1+",transparent 60%),radial-gradient(1000px 700px at -5% 100%,"+t.o2+",transparent 55%),linear-gradient(180deg,"+t.bg+","+(t.bg2||t.bg)+" 60%,"+t.bg+")";
+}
+function applyDecos(){
+  // decorations removed; clear any legacy classes from old saves
+  ["deco-crt","deco-gridpulse","deco-shooting"].forEach(c=>document.body.classList.remove(c));
+}
+function renderStore(){
+  const bal=document.getElementById("storeBal");if(bal)bal.textContent=state.points;
+  const list=document.getElementById("storeList");if(!list)return;
+  const frag=document.createDocumentFragment();
+  // Themes (split into 科技感 / 創意風格)
+  const makeThemeCard=t=>{
+    const owned=state.shop.ownedThemes.includes(t.id),active=state.shop.theme===t.id,can=state.points>=t.cost;
+    let btn;
+    if(active)btn=`<button class="btn btn-ghost mini" style="width:100%;justify-content:center;opacity:.7" disabled>使用中 ✓</button>`;
+    else if(owned)btn=`<button class="btn btn-primary mini setT" data-id="${t.id}" style="width:100%;justify-content:center">套用</button>`;
+    else btn=`<button class="btn ${can?"btn-primary":"btn-ghost"} mini buyT" data-id="${t.id}" style="width:100%;justify-content:center" ${can?"":"disabled"}>${can?"解鎖 ◆"+t.cost:"還差 "+(t.cost-state.points)}</button>`;
+    const card=document.createElement("div");
+    card.className="panel subj-card";card.style.cssText="cursor:default;border-left-color:"+t.c1+(active?";box-shadow:0 0 18px "+t.c1+"55":"");
+    card.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between"><div style="width:36px;height:36px;border-radius:8px;background:${t.bg};border:2px solid ${t.c1}66;display:flex;align-items:center;justify-content:center;font-size:18px">${t.icon}</div><div style="display:flex;gap:5px">${[t.c1,t.c2,t.c3].map(c=>'<i style="width:16px;height:16px;border-radius:50%;background:'+c+';box-shadow:0 0 8px '+c+'"></i>').join("")}</div></div><h3 style="margin:10px 0 2px;font-size:16px">${t.name}</h3><div style="font-family:var(--mono);font-size:11px;color:var(--muted2);margin-bottom:12px">${t.cost?"◆ "+t.cost:"預設"}</div>${btn}`;
+    return card;
+  };
+  // group themes by series
+  const SERIES=[
+    {id:"tech",label:"科技感 · 發光銳利"},
+    {id:"terminal",label:"終端機 · 等寬駭客"},
+    {id:"retro",label:"像素 8-bit · 復古遊戲"},
+    {id:"paper",label:"手帳便利貼 · 手寫貼紙"},
+    {id:"soft",label:"馬卡龍雲朵 · 柔軟膨膨"},
+    {id:"editorial",label:"雜誌藍圖 · 粗框平面"},
+    {id:"nature",label:"自然山水 · 有機柔線"},
+    {id:"vintage",label:"復古懷舊 · 雙線襯線"},
+    {id:"cosmic",label:"宇宙夢幻 · 漸層星塵"},
+    {id:"nordic",label:"極簡北歐 · 細線留白"},
+  ];
+  SERIES.forEach(ser=>{
+    const items=THEMES.filter(t=>(t.series||"tech")===ser.id);
+    if(!items.length)return;
+    const head=document.createElement("div");head.className="ach-cat";head.textContent="◣ "+ser.label;frag.appendChild(head);
+    const g=document.createElement("div");g.className="grid subj-grid";
+    items.forEach(t=>g.appendChild(makeThemeCard(t)));
+    frag.appendChild(g);
+  });
+  // Life rewards (user-editable)
+  const lh=document.createElement("div");lh.className="ach-cat";lh.style.cssText="display:flex;align-items:center;justify-content:space-between";
+  lh.innerHTML='<span>◣ 犒賞自己（可重複兌換 · 可自訂）</span>';
+  const addBtn=document.createElement("button");addBtn.className="btn btn-ghost mini";addBtn.textContent="＋ 新增獎勵";addBtn.style.cssText="border-color:var(--amber);color:var(--amber)";addBtn.onclick=()=>openRewardModal(null);
+  lh.appendChild(addBtn);frag.appendChild(lh);
+  const lgrid=document.createElement("div");lgrid.className="grid subj-grid";
+  if(!state.rewards.length){
+    const empty=document.createElement("div");empty.style.cssText="grid-column:1/-1;font-size:12px;color:var(--muted2);padding:8px 2px";empty.textContent="還沒有獎勵，點右上角「＋ 新增獎勵」來自訂吧！";lgrid.appendChild(empty);
+  }
+  state.rewards.forEach(r=>{
+    const can=state.points>=r.cost;
+    const btn=`<button class="btn ${can?"btn-primary":"btn-ghost"} mini buyLR" data-id="${r.id}" style="flex:1;justify-content:center" ${can?"":"disabled"}>${can?"兌換 ◆"+r.cost:"還差 "+(r.cost-state.points)}</button>`;
+    const card=document.createElement("div");card.className="panel subj-card";card.style.cssText="cursor:default;border-left-color:var(--amber)";
+    card.innerHTML=`<div style="display:flex;align-items:flex-start;justify-content:space-between"><div style="font-size:26px">${r.icon}</div><div style="display:flex;gap:4px"><button class="btn btn-ghost mini editLR" data-id="${r.id}" title="編輯" style="padding:4px 8px">✎</button><button class="btn btn-ghost mini delLR" data-id="${r.id}" title="刪除" style="padding:4px 8px;border-color:var(--red);color:var(--red)">🗑</button></div></div><h3 style="margin:8px 0 2px;font-size:16px">${esc(r.name)}</h3><div style="font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:6px">${esc(r.desc||"")}</div><div style="font-family:var(--mono);font-size:11px;color:var(--amber);margin-bottom:12px">◆ ${r.cost}</div><div style="display:flex;gap:6px">${btn}</div>`;
+    lgrid.appendChild(card);
+  });
+  frag.appendChild(lgrid);
+  list.innerHTML="";
+  list.appendChild(frag);
+  list.querySelectorAll(".buyT").forEach(b=>b.onclick=()=>buy("theme",b.dataset.id));
+  list.querySelectorAll(".setT").forEach(b=>b.onclick=()=>{state.shop.theme=b.dataset.id;applyTheme(b.dataset.id);save();renderStore();toast(themeById(b.dataset.id).icon,"已套用主題",themeById(b.dataset.id).name);});
+  list.querySelectorAll(".buyLR").forEach(b=>b.onclick=()=>buyLifeReward(b.dataset.id));
+  list.querySelectorAll(".editLR").forEach(b=>b.onclick=()=>openRewardModal(b.dataset.id));
+  list.querySelectorAll(".delLR").forEach(b=>b.onclick=()=>{
+    const r=state.rewards.find(x=>x.id===b.dataset.id);if(!r)return;
+    if(!confirm("刪除獎勵「"+r.name+"」？"))return;
+    state.rewards=state.rewards.filter(x=>x.id!==b.dataset.id);save();renderStore();toast("🗑","已刪除","「"+r.name+"」");
+  });
+  const lg=document.getElementById("redeemLog");
+  if(lg){
+    if(!state.redeemLog.length)lg.innerHTML='<div style="font-size:12px;color:var(--muted2)">尚無兌換紀錄。累積點數來犒賞自己吧 ✨</div>';
+    else lg.innerHTML=state.redeemLog.slice(-12).reverse().map(e=>'<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px"><span style="font-size:17px">'+e.icon+'</span><span style="flex:1">'+esc(e.name)+'</span><span style="font-family:var(--mono);font-size:11px;color:var(--red)">-'+e.cost+'</span><span style="font-family:var(--mono);font-size:10px;color:var(--muted2);min-width:90px;text-align:right">'+new Date(e.at).toLocaleDateString("zh-TW")+'</span></div>').join("");
+  }
+}
+function buyLifeReward(id){
+  const item=state.rewards.find(x=>x.id===id);if(!item)return;
+  if(state.points<item.cost){toast("⚠️","點數不夠","再努力一下！");return;}
+  if(!confirm("用 "+item.cost+" 點兌換「"+item.name+"」？"))return;
+  state.points-=item.cost;state.stats.lifeRedeems=(state.stats.lifeRedeems||0)+1;
+  state.redeemLog.push({icon:item.icon,name:item.name,cost:item.cost,at:Date.now()});
+  checkAch();save();renderAll();
+  toast(item.icon,"犒賞解鎖！",item.name+" — 去享受吧 🎉");
+}
+let editingRewardId=null;
+function openRewardModal(id){
+  editingRewardId=id;
+  const r=id?state.rewards.find(x=>x.id===id):null;
+  document.getElementById("rewardModalTitle").textContent=id?"✎ 編輯獎勵":"＋ 新增獎勵";
+  document.getElementById("rewardIconIn").value=r?r.icon:"🎁";
+  document.getElementById("rewardNameIn").value=r?r.name:"";
+  document.getElementById("rewardDescIn").value=r?(r.desc||""):"";
+  document.getElementById("rewardCostIn").value=r?r.cost:"";
+  document.getElementById("rewardModal").classList.add("on");
+  setTimeout(()=>document.getElementById("rewardNameIn").focus(),50);
+}
+function saveReward(){
+  const icon=(document.getElementById("rewardIconIn").value.trim()||"🎁");
+  const name=document.getElementById("rewardNameIn").value.trim();
+  const desc=document.getElementById("rewardDescIn").value.trim();
+  const cost=parseInt(document.getElementById("rewardCostIn").value,10);
+  if(!name){toast("⚠️","請填名稱","");return;}
+  if(!cost||cost<1){toast("⚠️","價格需為正整數","");return;}
+  if(editingRewardId){
+    const r=state.rewards.find(x=>x.id===editingRewardId);
+    if(r){r.icon=icon;r.name=name;r.desc=desc;r.cost=cost;}
+    toast("✓","已更新","「"+name+"」");
+  }else{
+    state.rewards.push({id:"lr_"+uid(),icon,name,desc,cost});
+    toast("🎁","已新增獎勵","「"+name+"」");
+  }
+  document.getElementById("rewardModal").classList.remove("on");
+  save();renderStore();
+}
+function buy(type,id){
+  const item=themeById(id);if(!item)return;
+  if(state.points<item.cost){toast("⚠️","點數不夠","再努力一下！");return;}
+  if(!confirm("解鎖「"+item.name+"」？將扣除 "+item.cost+" 點。"))return;
+  state.points-=item.cost;state.stats.redeems++;
+  state.redeemLog.push({icon:item.icon,name:item.name,cost:item.cost,at:Date.now()});
+  state.shop.ownedThemes.push(id);state.shop.theme=id;applyTheme(id);
+  checkAch();save();renderAll();
+  toast("🎨","解鎖成功！",item.name+" 已套用");
+}
+
+/* Page Visibility 由計時器區塊內的 visibilitychange 統一處理 */
+
+/* ===================== VIEWS ===================== */
+let curView="dash";
+function switchView(v){
+  curView=v;
+  document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));
+  document.getElementById("view-"+v).classList.add("active");
+  document.querySelectorAll(".nav-item[data-view]").forEach(n=>n.classList.toggle("active",n.dataset.view===v));
+  if(v!=="subj")curSubj=null;
+  renderSubjNav();
+  document.querySelector("main").scrollTop=0;
+  // lazy render newly visible section
+  if(v==="db")renderDbView();
+  if(v==="ach")renderAch();
+  if(v==="store")renderStore();
+}
+document.querySelectorAll(".nav-item[data-view]").forEach(n=>n.onclick=()=>switchView(n.dataset.view));
+document.getElementById("backToList").onclick=()=>switchView("dash");
+document.getElementById("delSubj").onclick=()=>{
+  const s=getSubj(curSubj);if(!s)return;
+  const n=state.db.filter(d=>d.catId===s.id).length;
+  if(!confirm("確定刪除分類「"+s.name+"」？\n"+(n?("這會一併刪除裡面的 "+n+" 份資料，"):"")+"此動作無法復原。"))return;
+  state.db=state.db.filter(d=>d.catId!==s.id);
+  state.subjects=state.subjects.filter(x=>x.id!==s.id);
+  curSubj=null;save();switchView("dash");renderAll();
+  toast("🗑","已刪除分類","「"+s.name+"」");
+};
+
+/* ===================== MODALS ===================== */
+const setM=document.getElementById("setModal"),subM=document.getElementById("subjModal");
+document.getElementById("btnSettings").onclick=()=>{document.getElementById("apiKeyIn").value=state.apiKey||"";document.getElementById("testRow").style.display=TEST?"block":"none";setM.classList.add("on");};
+const _topUp=document.getElementById("topUp");if(_topUp)_topUp.onclick=()=>{state.points=100000;state.lifetime=Math.max(state.lifetime,100000);save();renderAll();toast("🧪","測試點數已補滿","可用點數 100000");};
+document.getElementById("saveSet").onclick=()=>{state.apiKey=document.getElementById("apiKeyIn").value.trim();save();setM.classList.remove("on");toast("⚙","已儲存","設定已更新");};
+document.getElementById("resetData").onclick=()=>{if(confirm("確定要清除所有資料？此動作無法復原。")){state=freshState();try{localStorage.removeItem(KEY);}catch(e){}mem=null;curSubj=null;switchView("dash");renderAll();setM.classList.remove("on");toast("🗑","已清除","資料已重設");}};
+// ---- 匯出 / 匯入存檔 ----
+document.getElementById("exportData").onclick=()=>{
+  try{
+    const payload={app:"NEXUS",ver:2,exportedAt:new Date().toISOString(),data:state};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    const d=new Date(),pad=n=>(n<10?"0":"")+n;
+    a.href=url;a.download="NEXUS-存檔-"+d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+".json";
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast("⬇","已匯出存檔","換電腦時用「匯入存檔」還原");
+  }catch(e){toast("⚠️","匯出失敗",String(e.message||e).slice(0,60));}
+};
+document.getElementById("importData").onclick=()=>document.getElementById("importFile").click();
+document.getElementById("importFile").onchange=e=>{
+  const file=e.target.files&&e.target.files[0];e.target.value="";if(!file)return;
+  if(!confirm("匯入將覆蓋目前所有進度，確定要繼續嗎？"))return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const parsed=JSON.parse(String(r.result));
+      const incoming=parsed&&parsed.data?parsed.data:parsed;
+      if(!incoming||typeof incoming!=="object"||incoming.points===undefined)throw new Error("檔案格式不符");
+      state=Object.assign(freshState(),incoming);
+      state.stats=Object.assign(freshState().stats,state.stats||{});
+      state.streak=Object.assign(freshState().streak,state.streak||{});
+      if(!state.shop)state.shop=freshState().shop;
+      if(!Array.isArray(state.redeemLog))state.redeemLog=[];
+      if(!Array.isArray(state.db))state.db=[];
+      if(!Array.isArray(state.rewards))state.rewards=DEFAULT_REWARDS.map(r=>Object.assign({},r));
+      save();applyTheme(state.shop.theme);applyDecos();curSubj=null;switchView("dash");renderAll();setM.classList.remove("on");
+      toast("✅","匯入成功","進度已還原");
+    }catch(err){toast("⚠️","匯入失敗","請確認是 NEXUS 匯出的存檔");}
+  };
+  r.onerror=()=>toast("⚠️","讀取失敗","無法讀取此檔案");
+  r.readAsText(file);
+};
+const sw=document.getElementById("swatch");COLORS.forEach((c,i)=>{const e=document.createElement("i");e.style.background=c;if(i===0)e.classList.add("on");e.onclick=()=>{sw.querySelectorAll("i").forEach(x=>x.classList.remove("on"));e.classList.add("on");pickColor=c;};sw.appendChild(e);});
+document.getElementById("btnAddSubj").onclick=()=>{document.getElementById("subjNameIn").value="";subM.classList.add("on");setTimeout(()=>document.getElementById("subjNameIn").focus(),50);};
+document.getElementById("cancelSubj").onclick=()=>subM.classList.remove("on");
+document.getElementById("createSubj").onclick=()=>{
+  const n=document.getElementById("subjNameIn").value.trim();if(!n){toast("⚠️","請輸入名稱","");return;}
+  const s={id:uid(),name:n,color:pickColor};
+  state.subjects.push(s);checkAch();save();renderAll();subM.classList.remove("on");openSubj(s.id);
+  toast("🧩","分類已建立","「"+n+"」");
+};
+[setM,subM,document.getElementById("renameModal")].forEach(o=>o.onclick=e=>{if(e.target===o)o.classList.remove("on");});
+
+/* ===================== INIT ===================== */
+// 初始化生活獎勵（首次使用填入預設；舊存檔的 null 也會補上）
+if(!Array.isArray(state.rewards))state.rewards=DEFAULT_REWARDS.map(r=>Object.assign({},r));
+applyTheme(state.shop.theme);applyDecos();
+paintClock();renderAll();
+if(TEST){
+  document.title="NEXUS (TEST) — 自學引擎";
+  const badge=document.createElement("div");badge.textContent="TEST";
+  badge.style.cssText="font-family:var(--mono);font-size:10px;letter-spacing:2px;color:#04121a;background:var(--amber);padding:3px 9px;border-radius:20px;font-weight:700;margin-right:6px";
+  const top=document.querySelector("header.top");if(top)top.insertBefore(badge,top.firstChild);
+}
+</script>
+</body>
+</html>
